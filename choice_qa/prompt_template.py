@@ -1177,6 +1177,31 @@ height_responses = [
     "[A] is [X] in height.",
     "It is [X].",
 ]
+how_horizontal_face_object_questions = [
+    "I need to go to [A]. Which direction should I rotate to face it? [option]",
+    "To face [A], which direction should I rotate? [option]",
+    "Which direction should I rotate to look at [A]? [option]",
+    "If I want to face [A], should I rotate left or right? [option]",
+    "To turn toward [A], should I rotate left or right? [option]",
+    "In which direction should I rotate to look at [A]? [option]",
+    "To align my view with [A], should I rotate left or right? [option]",
+    "Should I rotate left or right to face [A]? [option]",
+    "To see [A] from here, which way should I rotate? [option]",
+    "Should I rotate my view to the left or to the right to look at [A]? [option]"
+]
+
+how_vertical_face_object_questions = [
+    "I want to look at [A]. Should I rotate my view up or down? [option]",
+    "To face [A], do I need to rotate up or down? [option]",
+    "Should I rotate up or down to look at [A]? [option]",
+    "From here, should I rotate up or down to see [A]? [option]",
+    "Which direction should I rotate to face [A] — up or down? [option]",
+    "If I want to face [A], should I rotate upward or downward? [option]",
+    "To align my view with [A], should I rotate up or down? [option]",
+    "Should I look upward or downward to see [A]? [option]",
+    "To see [A], do I need to rotate up or down? [option]",
+    "Which direction should I rotate to look at [A] — up or down? [option]"
+]
 
 facing_object_questions = [
     "Is [A] facing towards [B]?",

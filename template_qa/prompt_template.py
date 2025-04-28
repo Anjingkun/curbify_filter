@@ -1178,6 +1178,58 @@ height_responses = [
     "It is [X].",
 ]
 
+how_horizontal_face_object_questions = [
+    "I need to go to [A]. Should I rotate left or right to face it?",
+    "To face [A], do I need to turn left or right?",
+    "If I want to look at [A], should I rotate to the left or to the right?",
+    "Which is the correct direction to turn horizontally to face [A] — left or right?",
+    "I'm trying to face [A]. Do I rotate left or right?",
+    "To align my view with [A], should I turn left or right?",
+    "Should I rotate toward the left or the right to look at [A]?",
+    "From my current position, do I need to turn left or right to face [A]?",
+    "To directly face [A], is it better to turn left or right?",
+    "In order to face [A], should I rotate leftwards or rightwards?"
+]
+
+how_horizontal_face_object_responses = [
+    "You should rotate [R] by [X] degrees.",
+    "Turn [R] approximately [X] degrees to face it.",
+    "Rotate your view [R] by about [X]°.",
+    "To face it directly, rotate [R] by [X] degrees.",
+    "It’s best to rotate [R] around [X] degrees.",
+    "You should look [R] and rotate roughly [X] degrees.",
+    "To align with it, rotate [R] about [X]°.",
+    "Face [R] and turn [X] degrees.",
+    "A [X] degree turn to the [R] will do.",
+    "Turn [R] by [X] degrees to look at [A]."
+]
+
+how_vertical_face_object_questions = [
+    "I want to look at [A]. Should I rotate my view up or down?",
+    "To face [A], do I need to rotate up or down?",
+    "If I want to see [A], should I rotate my view upward or downward?",
+    "Should I rotate up or down to look at [A]?",
+    "From here, do I need to rotate up or down to face [A]?",
+    "To align my view with [A], should I rotate upward or downward?",
+    "Is [A] located above or below my current view — should I rotate up or down?",
+    "To directly face [A], should I rotate upward or downward?",
+    "Do I need to rotate up or down to see [A] clearly?",
+    "Should I rotate my view up or down to look at [A]?"
+]
+
+how_vertical_face_object_responses = [
+    "You should rotate [R] by [X] degrees.",
+    "Rotate your view [R] approximately [X] degrees.",
+    "To face it, rotate [R] by about [X]°.",
+    "It's best to rotate [R] around [X] degrees.",
+    "To align with it, rotate [R] by [X] degrees.",
+    "Rotate [R] and adjust your view roughly [X] degrees.",
+    "You need to rotate [R] about [X]° to see it properly.",
+    "A [X] degree rotation [R] will bring [A] into view.",
+    "Try rotating [R] by [X] degrees.",
+    "Rotate your view [R] by [X]° to face [A]."
+]
+
 facing_object_questions = [
     "Is [A] facing towards [B]?",
     "Is [A] oriented towards [B]?",

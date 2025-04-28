@@ -1015,6 +1015,79 @@ def outside_predicate(A, B, C, gt_depth_path, wide_depth_path):
 
 
 # face ----------------------------------------------------------------
+
+def how_horizontal_face_object(A, B, C, gt_depth_path, wide_depth_path, detections):
+    template_questions = how_horizontal_face_object_questions
+
+    A_desc = random.choice(A["spatial_caption"]).lower()
+    A_dense = A.get("dense_caption", A_desc).lower()
+
+    A_pos = np.array(A["position"])
+
+    # 计算水平旋转角度
+    horizontal_angle_deg = np.degrees(np.arctan2(A_pos[0], A_pos[2]))
+    if horizontal_angle_deg > 0:
+        horizontal_rotate = "right"
+    else:
+        horizontal_rotate = "left"
+
+    # 随机打乱 left/right 的顺序
+    options = ["left", "right"]
+    random.shuffle(options)
+
+    # 生成选项字符串
+    option_str = f"(A) {options[0]}, (B) {options[1]}"
+
+    # 选择模板并替换
+    question_template = random.choice(template_questions)
+    question_filled = smart_insert(A_desc, A_dense, "[A]", question_template)
+    question = question_filled.replace("[option]", option_str)
+
+    # 判断正确答案是哪个选项
+    if options[0] == horizontal_rotate:
+        answer = "(A)"
+    else:
+        answer = "(B)"
+
+    return question, answer
+
+def how_vertical_face_object(A, B, C, gt_depth_path, wide_depth_path, detections):
+    template_questions = how_vertical_face_object_questions
+
+    # 获取目标描述
+    A_desc = random.choice(A["spatial_caption"]).lower()
+    A_dense = A.get("dense_caption", A_desc).lower()
+
+    # 获取目标位置
+    A_pos = np.array(A["position"])
+
+    # 计算垂直旋转角度（pitch）：y轴相对 z轴方向的角度
+    vertical_angle_deg = np.degrees(np.arctan2(A_pos[1], A_pos[2]))
+    if vertical_angle_deg > 0:
+        vertical_rotate = "down"
+    else:
+        vertical_rotate = "up"
+
+    # 随机选项顺序
+    options = ["up", "down"]
+    random.shuffle(options)
+
+    # 构建选项字符串
+    option_str = f"(A) {options[0]}, (B) {options[1]}"
+
+    # 随机选择模板并替换
+    question_template = random.choice(template_questions)
+    question_filled = smart_insert(A_desc, A_dense, "[A]", question_template)
+    question = question_filled.replace("[option]", option_str)
+
+    # 判断正确答案
+    if options[0] == vertical_rotate:
+        answer = "(A)"
+    else:
+        answer = "(B)"
+
+    return question, answer
+
 def is_facing_object(A, B, C, gt_depth_path, wide_depth_path):
     # A正对B
     template_questions = facing_object_questions
@@ -1825,6 +1898,11 @@ class PromptGenerator:
         """
         results = []
 
+        onr_object_choice_prompts = [
+            # how_horizontal_face_object
+            # how_vertical_face_object
+        ]
+
         # 至少两个物体
         yes_or_no_choice_prompts = [
             left_predicate,
@@ -1846,7 +1924,7 @@ class PromptGenerator:
             contain_predicate,
             outside_predicate,
             is_facing_object,
-            is_facing_away_from_object
+            is_facing_away_from_object,
         ]
 
         # 至少两个物体

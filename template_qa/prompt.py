@@ -1255,6 +1255,60 @@ def object_height_data(A, B, C, gt_depth_path, wide_depth_path, detections):
     return question, answer
 
 # face ----------------------------------------------------------------
+def how_horizontal_face_object(A, B, C, gt_depth_path, wide_depth_path, detections):
+    template_questions = how_horizontal_face_object_questions
+    template_responses = how_horizontal_face_object_responses
+
+    A_desc = random.choice(A["spatial_caption"]).lower()
+    A_dense = A.get("dense_caption", A_desc).lower()
+
+    A_pos = np.array(A["position"])
+
+    # 4. 计算角度
+    horizontal_angle_deg = np.degrees(np.arctan2(A_pos[0], A_pos[2]))
+    if horizontal_angle_deg > 0:
+        horizontal_rotate = "right"
+    else:
+        horizontal_rotate = "left"
+
+    question_template = random.choice(template_questions)
+    answer_template = random.choice(template_responses)
+
+    question = smart_insert(A_desc, A_dense, "[A]", question_template)
+    answer = smart_insert(A_desc, A_dense, "[A]", answer_template)
+    answer = answer.replace("[R]", horizontal_rotate)
+    answer = answer.replace("[X]", f"{abs(horizontal_angle_deg):.3f}")
+
+    return question, answer
+
+
+def how_vertical_face_object(A, B, C, gt_depth_path, wide_depth_path, detections):
+    template_questions = how_vertical_face_object_questions
+    template_responses = how_vertical_face_object_responses
+
+    A_desc = random.choice(A["spatial_caption"]).lower()
+    A_dense = A.get("dense_caption", A_desc).lower()
+
+    A_pos = np.array(A["position"])
+
+    # 4. 计算角度
+    vertical_angle_deg = np.degrees(np.arctan2(A_pos[1], A_pos[2]))
+    if vertical_angle_deg > 0:
+        vertical_rotate = "down"
+    else:
+        vertical_rotate = "up"
+
+    question_template = random.choice(template_questions)
+    answer_template = random.choice(template_responses)
+
+    question = smart_insert(A_desc, A_dense, "[A]", question_template)
+    answer = smart_insert(A_desc, A_dense, "[A]", answer_template)
+    answer = answer.replace("[R]", vertical_rotate)
+    answer = answer.replace("[X]", f"{abs(vertical_angle_deg):.3f}")
+
+    return question, answer
+
+
 def is_facing_object(A, B, C, gt_depth_path, wide_depth_path, detections):
     # A正对B
     template_questions = facing_object_questions
@@ -2507,6 +2561,7 @@ class PromptGenerator:
             point_2_fine_grain_object,
             object_width_data,
             object_height_data,
+            # how_face_object,
         ]
 
         # 二元谓词函数列表（物体对之间的关系）
