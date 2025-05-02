@@ -89,7 +89,7 @@ fine_grain_object_2_point_questions = [
     "Chose the point of [A]. Please provide its 2D coordinates.",
     "What is the 2D location of [A]? Please provide its 2D coordinates.",
 
-    "Point to [A]."
+    "Point to [A].",
     "Point to the [A] in the image.",
     "Point to all occurrences of [A] in the image.",
     "Point to any [A] in the image.",
@@ -140,7 +140,7 @@ point_2_caption_responses = [
 
 # obj Predicates ------------------------------------------------------
 left_predicate_questions = [
-    "Is [A] at the left side of [B]?"
+    "Is [A] at the left side of [B]?",
     "Is [A] to the left of [B] from the viewer's perspective?",
     "Does [A] appear on the left side of [B]?",
     "Can you confirm if [A] is positioned to the left of [B]?",
@@ -162,7 +162,7 @@ left_false_responses = [
 ]
 
 right_predicate_questions = [
-    "Is [A] at the right side of [B]?"
+    "Is [A] at the right side of [B]?",
     "Is [A] to the right of [B] from the viewer's perspective?",
     "Does [A] appear on the right side of [B]?",
     "Can you confirm if [A] is positioned to the right of [B]?",
@@ -215,8 +215,8 @@ image_above_predicate_questions = [
     "From the image's perspective, is [A] located above [B]?",
     "From the image's perspective, would you say [A] is positioned over [B]?",
     "From the image's perspective, is [A] on top of [B]?",
-    "From the image's perspective, is [A] over [B]?"
-    "From the image's perspective, is [A] on [B]?"
+    "From the image's perspective, is [A] over [B]?",
+    "From the image's perspective, is [A] on [B]?",
 ]
 
 image_above_true_responses = [
@@ -224,8 +224,8 @@ image_above_true_responses = [
     "Yes, from the image's perspective, [A] is above [B].",
     "Correct, [A] appears higher than [B] in the image.",
     "Indeed, from the image's perspective, [A] is shown above [B].",
-    "Yes, from the image's perspective, [A] is on top of [B]."
-    "Yes, from the image's perspective, [A] is over [B]."
+    "Yes, from the image's perspective, [A] is on top of [B].",
+    "Yes, from the image's perspective, [A] is over [B].",
 ]
 
 image_above_false_responses = [
@@ -269,33 +269,33 @@ world_above_predicate_questions = [
     "From a real-world perspective, is [A] positioned over [B] based on gravity?",
     "From a real-world perspective, is [A] on top of [B]?",
     "From a real-world perspective, is [A] over [B]?",
-    "From a real-world perspective, is [A] on [B]?"
+    "From a real-world perspective, is [A] on [B]?",
 ]
 world_above_true_responses = [
     "Yes.",
     "Yes, from a real-world perspective, [A] is above [B].",
     "Correct, in the physical world, [A] is higher than [B].",
     "Indeed, from a real-world perspective, [A] stands above [B].",
-    "Yes, from a real-world perspective, [A] is on top of [B]."
-    "Yes, from a real-world perspective, [A] is over [B]"
+    "Yes, from a real-world perspective, [A] is on top of [B].",
+    "Yes, from a real-world perspective, [A] is over [B].",
 ]
 world_above_false_responses = [
     "No.",
     "No, from a real-world perspective, [A] is not above [B].",
     "Actually, [A] is physically below [B] in the real world.",
     "Incorrect, from a real-world perspective, [A] is lower than [B].",
-    "No, from a real-world perspective, [A] is not on top of [B]."
-    "No, from a real-world perspective, [A] is not over [B]"
+    "No, from a real-world perspective, [A] is not on top of [B].",
+    "No, from a real-world perspective, [A] is not over [B]",
 ]
 
 world_below_predicate_questions = [
-    "From a real-world perspective, is [A] below [B]?"
+    "From a real-world perspective, is [A] below [B]?",
     "From a real-world perspective, is [A] physically below [B]?",
     "From a real-world perspective, is [A] located beneath [B]?",
     "From a real-world perspective, does [A] sit lower than [B]?",
     "From a real-world perspective, is [A] positioned under [B] based on gravity?",
     "From a real-world perspective, is [A] beneath [B]?",
-    "From a real-world perspective, is [A] under [B]?"
+    "From a real-world perspective, is [A] under [B]?",
 ]
 
 world_below_true_responses = [
@@ -303,8 +303,8 @@ world_below_true_responses = [
     "Yes, from a real-world perspective, [A] is below [B].",
     "Correct, in the physical world, [A] is lower than [B].",
     "Indeed, from a real-world perspective, [A] is positioned beneath [B].",
-    "Yes, from a real-world perspective, [A] is beneath [B]."
-    "Yes, from a real-world perspective, [A] is under [B]."
+    "Yes, from a real-world perspective, [A] is beneath [B].",
+    "Yes, from a real-world perspective, [A] is under [B].",
 ]
 
 world_below_false_responses = [
@@ -312,8 +312,8 @@ world_below_false_responses = [
     "No, from a real-world perspective, [A] is not below [B].",
     "Actually, [A] is physically above [B] in the real world.",
     "Incorrect, from a real-world perspective, [A] is higher than [B].",
-    "No, from a real-world perspective, [A] is not beneath [B]."
-    "No, from a real-world perspective, [A] is not under [B]."
+    "No, from a real-world perspective, [A] is not beneath [B].",
+    "No, from a real-world perspective, [A] is not under [B].",
 ]
 
 behind_predicate_questions = [
@@ -512,11 +512,11 @@ small_false_responses = [
 ]
 
 touch_predicate_questions = [
-    "Is [A] beside [B]?"
+    "Is [A] beside [B]?",
     "Is [A] touching [B]?",
-    "Is [A] next to [B]?"
+    "Is [A] next to [B]?",
     "Is [A] in contact with [B]?",
-    "Is [A] with [B]?"
+    "Is [A] with [B]?",
     "Are [A] and [B] making contact?",
     "Is [A] placed right next to [B]?",
     "Are [A] and [B] beside each other?",
@@ -544,9 +544,9 @@ touch_false_responses = [
     "No.",
     "No, [A] is not touching [B].",
     "No, [A] is not next to [B].",
-    "No, [A] is not beside [B]."
+    "No, [A] is not beside [B].",
     "No, [A] is not in contact with [B].",
-    "No, [A] is not with [B]."
+    "No, [A] is not with [B].",
     "[A] and [B] are not in contact.",
     "There is a gap between [A] and [B].",
     "[A] is not next to [B], and they're not touching.",
@@ -617,8 +617,8 @@ contain_true_responses = [
     "Absolutely, [B] is inside [A].",
     "Yes, [B] can be found within [A].",
     "Yes, [B] is surrounded by [A].",
-    "Yes, [A] is surrounding [B]."
-    "Yes, [B] is a part of [A]."
+    "Yes, [A] is surrounding [B].",
+    "Yes, [B] is a part of [A].",
 ]
 
 contain_false_responses = [
@@ -630,7 +630,7 @@ contain_false_responses = [
     "That’s incorrect, [B] is not inside [A].",
     "No, [B] is located outside of [A].",
     "Definitely not — [B] is not inside [A].",
-    "No, [B] is not surrounded by [A]."
+    "No, [B] is not surrounded by [A].",
 ]
 
 outside_predicate_questions = [
@@ -641,7 +641,8 @@ outside_predicate_questions = [
     "Is [A] completely or partially outside of [B]?",
     "Is [A] not inside [B]?",
     "Is [A] not within [B]?",
-    "Can we say [A] lies outside [B]?"
+    "Can we say [A] lies outside [B]?",
+    "Is [A] outside [B]?"
 ]
 
 outside_true_responses = [
@@ -956,7 +957,7 @@ small_choice_responses = [
 ]
 
 wide_choice_questions = [
-    "Which object is wider, [A] or [B]?"
+    "Which object is wider, [A] or [B]?",
     "Between [A] and [B], which one has larger width?",
     "Which of these two, [A] or [B], is wider?",
     "Considering the sizes of objects [A] and [B] in the image provided, who is wider, [A] or [B]?"
@@ -970,7 +971,7 @@ wide_choice_responses = [
 ]
 
 thin_choice_questions = [
-    "Which object is thinner, [A] or [B]?"
+    "Which object is thinner, [A] or [B]?",
     "Between [A] and [B], which one has smaller width?",
     "Which of these two, [A] or [B], is thinner?",
     "Considering the sizes of objects [A] and [B] in the image provided, who is thinner, [A] or [B]?"
@@ -1018,7 +1019,7 @@ point_close_choice_questions = [
 ]
 
 point_close_choice_responses = [
-    "Point [X]"
+    "Point [X]",
     "The point [X] is in front.",
     "Positioned in front is point [X].",
     "The point [X] is more forward.",
@@ -1521,7 +1522,7 @@ close_anchor_questions = [
 ]
 
 close_anchor_responses = [
-    "[X]."
+    "[X].",
     "[X] is closer to [C].",
     "The object closer to [C] is [X].",
     "Based on the image, [X] appears to be nearer to [C].",

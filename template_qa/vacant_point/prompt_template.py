@@ -212,16 +212,34 @@ below_vacant_template_questions = [
 below_vacant_template_answers = ["[X]"]
 
 between_vacant_template_questions = [
-    "Identify several spots within the vacant space that's between [A] and [B]. Your answer should be formatted as a list of tuples, i.e. [(x1, y1), (x2, y2), ...], where each tuple contains the x and y coordinates of a point satisfying the conditions above. The coordinates should be between 0 and 1, indicating the normalized pixel locations of the points in the image.",
-    "Locate several points within the vacant area that lies between [A] and [B]. Your answer should be formatted as a list of tuples, i.e. [(x1, y1), (x2, y2), ...], where each tuple contains the x and y coordinates of a point satisfying the conditions above. The coordinates should be between 0 and 1, indicating the normalized pixel locations of the points in the image.",
-    "Locate a few places in the free space between [A] and [B]. Your answer should be formatted as a list of tuples, i.e. [(x1, y1), (x2, y2), ...], where each tuple contains the x and y coordinates of a point satisfying the conditions above. The coordinates should be between 0 and 1, indicating the normalized pixel locations of the points in the image.",
-    "Indicate several points within the vacant area that lies between [A] and [B]. Your answer should be formatted as a list of tuples, i.e. [(x1, y1), (x2, y2), ...], where each tuple contains the x and y coordinates of a point satisfying the conditions above. The coordinates should be between 0 and 1, indicating the normalized pixel locations of the points in the image.",
-    "Locate some points within the free area in between [A] and [B]. Your answer should be formatted as a list of tuples, i.e. [(x1, y1), (x2, y2), ...], where each tuple contains the x and y coordinates of a point satisfying the conditions above. The coordinates should be between 0 and 1, indicating the normalized pixel locations of the points in the image.",
-    "Identify some spots in the free space between [A] and [B]. Your answer should be formatted as a list of tuples, i.e. [(x1, y1), (x2, y2), ...], where each tuple contains the x and y coordinates of a point satisfying the conditions above. The coordinates should be between 0 and 1, indicating the normalized pixel locations of the points in the image.",
-    "Find several places in the vacant space in between [A] and [B]. Your answer should be formatted as a list of tuples, i.e. [(x1, y1), (x2, y2), ...], where each tuple contains the x and y coordinates of a point satisfying the conditions above. The coordinates should be between 0 and 1, indicating the normalized pixel locations of the points in the image.",
-    "Find a few locations in the empty space that is in between [A] and [B]. Your answer should be formatted as a list of tuples, i.e. [(x1, y1), (x2, y2), ...], where each tuple contains the x and y coordinates of a point satisfying the conditions above. The coordinates should be between 0 and 1, indicating the normalized pixel locations of the points in the image.",
-    "Pinpoint some spots within the free space that is in between [A] and [B]. Your answer should be formatted as a list of tuples, i.e. [(x1, y1), (x2, y2), ...], where each tuple contains the x and y coordinates of a point satisfying the conditions above. The coordinates should be between 0 and 1, indicating the normalized pixel locations of the points in the image.",
-    "Pinpoint some points within the vacant space that is in between [A] and [B]. Your answer should be formatted as a list of tuples, i.e. [(x1, y1), (x2, y2), ...], where each tuple contains the x and y coordinates of a point satisfying the conditions above. The coordinates should be between 0 and 1, indicating the normalized pixel locations of the points in the image.",
+    "Identify several spots within the vacant space that's between [A] and [B]. Your answer should be formatted as a list of tuples, i.e. [(x1, y1)], where each tuple contains the x and y coordinates of a point satisfying the conditions above. The coordinates should be between 0 and 1, indicating the normalized pixel locations of the points in the image.",
+    "Locate several points within the vacant area that lies between [A] and [B]. Your answer should be formatted as a list of tuples, i.e. [(x1, y1)], where each tuple contains the x and y coordinates of a point satisfying the conditions above. The coordinates should be between 0 and 1, indicating the normalized pixel locations of the points in the image.",
+    "Locate a few places in the free space between [A] and [B]. Your answer should be formatted as a list of tuples, i.e. [(x1, y1)], where each tuple contains the x and y coordinates of a point satisfying the conditions above. The coordinates should be between 0 and 1, indicating the normalized pixel locations of the points in the image.",
+    "Indicate several points within the vacant area that lies between [A] and [B]. Your answer should be formatted as a list of tuples, i.e. [(x1, y1)], where each tuple contains the x and y coordinates of a point satisfying the conditions above. The coordinates should be between 0 and 1, indicating the normalized pixel locations of the points in the image.",
+    "Locate some points within the free area in between [A] and [B]. Your answer should be formatted as a list of tuples, i.e. [(x1, y1)], where each tuple contains the x and y coordinates of a point satisfying the conditions above. The coordinates should be between 0 and 1, indicating the normalized pixel locations of the points in the image.",
+    "Identify some spots in the free space between [A] and [B]. Your answer should be formatted as a list of tuples, i.e. [(x1, y1)], where each tuple contains the x and y coordinates of a point satisfying the conditions above. The coordinates should be between 0 and 1, indicating the normalized pixel locations of the points in the image.",
+    "Find several places in the vacant space in between [A] and [B]. Your answer should be formatted as a list of tuples, i.e. [(x1, y1)], where each tuple contains the x and y coordinates of a point satisfying the conditions above. The coordinates should be between 0 and 1, indicating the normalized pixel locations of the points in the image.",
+    "Find a few locations in the empty space that is in between [A] and [B]. Your answer should be formatted as a list of tuples, i.e. [(x1, y1)], where each tuple contains the x and y coordinates of a point satisfying the conditions above. The coordinates should be between 0 and 1, indicating the normalized pixel locations of the points in the image.",
+    "Pinpoint some spots within the free space that is in between [A] and [B]. Your answer should be formatted as a list of tuples, i.e. [(x1, y1)], where each tuple contains the x and y coordinates of a point satisfying the conditions above. The coordinates should be between 0 and 1, indicating the normalized pixel locations of the points in the image.",
+    "Pinpoint some points within the vacant space that is in between [A] and [B]. Your answer should be formatted as a list of tuples, i.e. [(x1, y1)], where each tuple contains the x and y coordinates of a point satisfying the conditions above. The coordinates should be between 0 and 1, indicating the normalized pixel locations of the points in the image.",
+
+    # Simpler question format with coordinates request
+    "Where is a free space between [A] and [B]? Please provide its 2D coordinates.",
+    "Can you find a vacant point located between [A] and [B]? Please provide its 2D coordinates.",
+    "Can you point to an empty location between [A] and [B]? Please provide its 2D coordinates.",
+    "Where can I find a free spot between [A] and [B]? Please provide its 2D coordinates.",
+    "What is the location of an unoccupied area between [A] and [B]? Please provide its 2D coordinates.",
+    "Give me the position of a free point between [A] and [B]. Please provide its 2D coordinates.",
+    "Choose a point between [A] and [B] in the vacant region. Please provide its 2D coordinates.",
+    "What is the 2D location of a free space between [A] and [B]? Please provide its 2D coordinates.",
+
+    # Simplest command format (no answer explanation)
+    "Point to a free spot between [A] and [B].",
+    "Point to the vacant area between [A] and [B] in the image.",
+    "Point to any empty space between [A] and [B] in the image.",
+    "Locate the blank region between [A] and [B] in the image.",
+    "Locate any unoccupied position between [A] and [B] in the image.",
+    "Identify the free space between [A] and [B]."
 ]
 
 between_vacant_template_answers = ["[X]"]

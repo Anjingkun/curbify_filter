@@ -2561,7 +2561,8 @@ class PromptGenerator:
             point_2_fine_grain_object,
             object_width_data,
             object_height_data,
-            # how_face_object,
+            how_horizontal_face_object,
+            how_vertical_face_object
         ]
 
         # 二元谓词函数列表（物体对之间的关系）
@@ -2635,7 +2636,7 @@ class PromptGenerator:
 
             for A, A_index in one_obj_object_pairs:
                 valid_prompt_variants = one_object_can
-                selected_predicates_choices = random.sample(valid_prompt_variants, 6)
+                selected_predicates_choices = random.sample(valid_prompt_variants, 8)
 
                 for prompt_func in selected_predicates_choices:
                     qa = prompt_func(A, '', '', gt_depth_path, wide_depth_path, detections)
@@ -2655,7 +2656,7 @@ class PromptGenerator:
 
             for A, A_index in one_object_pairs:
                 valid_prompt_variants = one_object_can
-                selected_predicates_choices = random.sample(valid_prompt_variants, 6)
+                selected_predicates_choices = random.sample(valid_prompt_variants, 8)
 
                 for prompt_func in selected_predicates_choices:
                     qa = prompt_func(A, '', '', gt_depth_path, wide_depth_path, detections)
@@ -2689,7 +2690,7 @@ class PromptGenerator:
             # 一元谓词：对每个物体各选一次
             one_obj_all_combinations = list(combinations(range(len(detections)), 1))
             random.shuffle(one_obj_all_combinations)
-            one_obj_selected_combinations = one_obj_all_combinations[:6]
+            one_obj_selected_combinations = one_obj_all_combinations[:8]
             one_object_pairs = [(detections[i], i) for (i,) in one_obj_selected_combinations]
 
             for A, A_index in one_object_pairs:

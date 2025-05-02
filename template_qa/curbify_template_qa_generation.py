@@ -1,13 +1,10 @@
 import os
 import json
-from multiprocessing import Pool, cpu_count
+from multiprocessing import Pool, cpu_count, set_start_method
 from pathlib import Path
 from tqdm import tqdm
 from prompt import PromptGenerator
 import traceback
-from concurrent.futures import ProcessPoolExecutor, as_completed
-import multiprocessing
-import time
 
 # 目标 JSON 文件名（检测文件）
 TARGET_FILENAME = "detections_with_bbox_label_qwen_spital_caption_mask_pcd.json"
@@ -124,14 +121,46 @@ def template_qa_generation(frame_dir, template_name):
 
 
     
-def process_all_unprocessed_dirs(unprocessed_dirs: list[str], template_name) -> list[str]:
+def process_frame_dir(args):
+    """
+    包装 template_qa_generation 调用，并返回处理情况。
+    """
+    frame_dir, template_name = args
+    try:
+        template_qa_generation(frame_dir, template_name)
+        return frame_dir  # 成功处理后返回处理的帧目录
+    except Exception as e:
+        print(f"Error processing {frame_dir}: {e}")
+        traceback.print_exc()
+        return None
 
-    for unprocessed_dir in tqdm(unprocessed_dirs, desc="🔄 Processing unprocessed frames"):
-        template_qa_generation(unprocessed_dir, template_name)
+def process_all_unprocessed_dirs(unprocessed_dirs: list[str], template_name) -> list[str]:
+    """
+    使用多进程处理所有未处理帧目录.
+    返回成功处理的帧目录列表.
+    """
+    tasks = [(frame_dir, template_name) for frame_dir in unprocessed_dirs]
+    processed_dirs = []
+    
+    with Pool(cpu_count()) as pool:
+        for result in tqdm(
+            pool.imap_unordered(process_frame_dir, tasks, chunksize=1),
+            total=len(tasks),
+            desc="🔄 Processing unprocessed frames"
+        ):
+            if result is not None:
+                processed_dirs.append(result)
+    
+    return processed_dirs
 
 
 # 示例用法
 if __name__ == "__main__":
+    # 为避免 fork 带来的问题，使用 spawn 启动方式
+    try:
+        set_start_method('spawn', force=True)
+    except RuntimeError:
+        pass
     root_dir = "/home_sfs/zhouenshen/dataset/3D/cubifyanything/filter_step_20"
     template_name = "template_qa.json"
     # ✅ 第一步：查找所有合法的帧文件夹（包含目标 JSON）

@@ -1898,9 +1898,9 @@ class PromptGenerator:
         """
         results = []
 
-        onr_object_choice_prompts = [
-            # how_horizontal_face_object
-            # how_vertical_face_object
+        one_object_choice_prompts = [
+            how_horizontal_face_object,
+            how_vertical_face_object
         ]
 
         # 至少两个物体
@@ -1946,44 +1946,120 @@ class PromptGenerator:
             far_anchor_multi_choice,
         ]
 
-        if len(detections) <= 1:
-            return results     
-           
+        if len(detections) == 0:
+            return results
+
+        # --------------------------
+        # 处理单个物体的情况
+        # --------------------------
+        elif len(detections) == 1:
+            # 一元谓词：从有序组合中选取
+            one_obj_all_combinations = list(permutations(range(len(detections)), 1))
+            random.shuffle(one_obj_all_combinations)
+            one_obj_selected_combinations = one_obj_all_combinations[:1]
+            one_obj_object_pairs = [(detections[i], i) for (i,) in one_obj_selected_combinations]
+
+            for A, A_index in one_obj_object_pairs:
+                valid_prompt_variants = one_object_choice_prompts
+                selected_predicates_choices = random.sample(valid_prompt_variants, 2)
+
+                for prompt_func in selected_predicates_choices:
+                    qa = prompt_func(A, '', '', gt_depth_path, wide_depth_path, detections)
+                    results.append((qa, A_index, '', '', prompt_func.__name__, 'one_object_qa'))
+
         # --------------------------
         # 处理两个物体的情况
         # --------------------------
 
+        elif len(detections) == 2:
 
-        # 二元谓词：从有序组合中选取
-        two_obj_all_combinations = list(permutations(range(len(detections)), 2))
-        random.shuffle(two_obj_all_combinations)
-        two_obj_selected_combinations = two_obj_all_combinations[:3]
-        two_object_pairs = [(detections[i], detections[j], i, j) for i, j in two_obj_selected_combinations]
+            # 一元谓词：从有序组合中选取
+            one_obj_all_combinations = list(permutations(range(len(detections)), 1))
+            random.shuffle(one_obj_all_combinations)
+            one_obj_selected_combinations = one_obj_all_combinations[:2]
+            one_obj_object_pairs = [(detections[i], i) for (i,) in one_obj_selected_combinations]
 
-        for A, B, A_index, B_index in two_object_pairs:
-            valid_prompt_variants = yes_or_no_choice_prompts
-            selected_predicates_choices = random.sample(valid_prompt_variants, 6)
+            for A, A_index in one_obj_object_pairs:
+                valid_prompt_variants = one_object_choice_prompts
+                selected_predicates_choices = random.sample(valid_prompt_variants, 1)
 
-            for prompt_func in selected_predicates_choices:
-                qa = prompt_func(A, B, '', gt_depth_path, wide_depth_path)
-                results.append((qa, A_index, B_index, '', prompt_func.__name__, 'yes_or_no_choice_prompts'))
+                for prompt_func in selected_predicates_choices:
+                    qa = prompt_func(A, '', '', gt_depth_path, wide_depth_path, detections)
+                    results.append((qa, A_index, '', '', prompt_func.__name__, 'one_object_qa'))
+
+            # 二元谓词：从有序组合中选取
+            two_obj_all_combinations = list(permutations(range(len(detections)), 2))
+            random.shuffle(two_obj_all_combinations)
+            two_obj_selected_combinations = two_obj_all_combinations[:3]
+            two_object_pairs = [(detections[i], detections[j], i, j) for i, j in two_obj_selected_combinations]
+
+            for A, B, A_index, B_index in two_object_pairs:
+                valid_prompt_variants = yes_or_no_choice_prompts
+                selected_predicates_choices = random.sample(valid_prompt_variants, 6)
+
+                for prompt_func in selected_predicates_choices:
+                    qa = prompt_func(A, B, '', gt_depth_path, wide_depth_path)
+                    results.append((qa, A_index, B_index, '', prompt_func.__name__, 'yes_or_no_choice_prompts'))
 
 
-        # 二元谓词：从有序组合中选取
-        two_obj_all_combinations = list(permutations(range(len(detections)), 2))
-        random.shuffle(two_obj_all_combinations)
-        two_obj_selected_combinations = two_obj_all_combinations[:3]
-        two_object_pairs = [(detections[i], detections[j], i, j) for i, j in two_obj_selected_combinations]
+            # 二元谓词：从有序组合中选取
+            two_obj_all_combinations = list(permutations(range(len(detections)), 2))
+            random.shuffle(two_obj_all_combinations)
+            two_obj_selected_combinations = two_obj_all_combinations[:3]
+            two_object_pairs = [(detections[i], detections[j], i, j) for i, j in two_obj_selected_combinations]
 
-        for A, B, A_index, B_index in two_object_pairs:
-            valid_prompt_variants = double_choice_prompts
-            selected_predicates_choices = random.sample(valid_prompt_variants, 4)
+            for A, B, A_index, B_index in two_object_pairs:
+                valid_prompt_variants = double_choice_prompts
+                selected_predicates_choices = random.sample(valid_prompt_variants, 4)
 
-            for prompt_func in selected_predicates_choices:
-                qa = prompt_func(A, B, '', gt_depth_path, wide_depth_path)
-                results.append((qa, A_index, B_index, '', prompt_func.__name__, 'double_choice_prompts'))
+                for prompt_func in selected_predicates_choices:
+                    qa = prompt_func(A, B, '', gt_depth_path, wide_depth_path)
+                    results.append((qa, A_index, B_index, '', prompt_func.__name__, 'double_choice_prompts'))
 
         if len(detections) >= 3:
+            
+            # 一元谓词：从有序组合中选取
+            one_obj_all_combinations = list(permutations(range(len(detections)), 1))
+            random.shuffle(one_obj_all_combinations)
+            one_obj_selected_combinations = one_obj_all_combinations[:2]
+            one_obj_object_pairs = [(detections[i], i) for (i,) in one_obj_selected_combinations]
+
+            for A, A_index in one_obj_object_pairs:
+                valid_prompt_variants = one_object_choice_prompts
+                selected_predicates_choices = random.sample(valid_prompt_variants, 1)
+
+                for prompt_func in selected_predicates_choices:
+                    qa = prompt_func(A, '', '', gt_depth_path, wide_depth_path, detections)
+                    results.append((qa, A_index, '', '', prompt_func.__name__, 'one_object_qa'))
+
+            # 二元谓词：从有序组合中选取
+            two_obj_all_combinations = list(permutations(range(len(detections)), 2))
+            random.shuffle(two_obj_all_combinations)
+            two_obj_selected_combinations = two_obj_all_combinations[:3]
+            two_object_pairs = [(detections[i], detections[j], i, j) for i, j in two_obj_selected_combinations]
+
+            for A, B, A_index, B_index in two_object_pairs:
+                valid_prompt_variants = yes_or_no_choice_prompts
+                selected_predicates_choices = random.sample(valid_prompt_variants, 6)
+
+                for prompt_func in selected_predicates_choices:
+                    qa = prompt_func(A, B, '', gt_depth_path, wide_depth_path)
+                    results.append((qa, A_index, B_index, '', prompt_func.__name__, 'yes_or_no_choice_prompts'))
+
+
+            # 二元谓词：从有序组合中选取
+            two_obj_all_combinations = list(permutations(range(len(detections)), 2))
+            random.shuffle(two_obj_all_combinations)
+            two_obj_selected_combinations = two_obj_all_combinations[:3]
+            two_object_pairs = [(detections[i], detections[j], i, j) for i, j in two_obj_selected_combinations]
+
+            for A, B, A_index, B_index in two_object_pairs:
+                valid_prompt_variants = double_choice_prompts
+                selected_predicates_choices = random.sample(valid_prompt_variants, 4)
+
+                for prompt_func in selected_predicates_choices:
+                    qa = prompt_func(A, B, '', gt_depth_path, wide_depth_path)
+                    results.append((qa, A_index, B_index, '', prompt_func.__name__, 'double_choice_prompts'))
 
             for _ in range(2):
                 valid_prompt_variants = multi_choice_prompts

@@ -89,7 +89,7 @@ fine_grain_object_2_point_questions = [
     "Chose the point of [A]. Please provide its 2D coordinates.",
     "What is the 2D location of [A]? Please provide its 2D coordinates.",
 
-    "Point to [A]."
+    "Point to [A].",
     "Point to the [A] in the image.",
     "Point to all occurrences of [A] in the image.",
     "Point to any [A] in the image.",
@@ -140,11 +140,11 @@ point_2_caption_responses = [
 
 # obj Predicates ------------------------------------------------------
 left_predicate_questions = [
-    "Is [A] at the left side of [B]?"
+    "Is [A] at the left side of [B]?",
     "Is [A] to the left of [B] from the viewer's perspective?",
     "Does [A] appear on the left side of [B]?",
     "Can you confirm if [A] is positioned to the left of [B]?",
-    "Considering the relative positions of [A] and [B] in the image provided, is [A] to the left of [B] from the viewer's perspective?"
+    "Considering the relative positions of [A] and [B] in the image provided, is [A] to the left of [B] from the viewer's perspective?",
 ]
 
 left_true_responses = [
@@ -162,11 +162,11 @@ left_false_responses = [
 ]
 
 right_predicate_questions = [
-    "Is [A] at the right side of [B]?"
+    "Is [A] at the right side of [B]?",
     "Is [A] to the right of [B] from the viewer's perspective?",
     "Does [A] appear on the right side of [B]?",
     "Can you confirm if [A] is positioned to the right of [B]?",
-    "Considering the relative positions of [A] and [B] in the image provided, is [A] to the right of [B] from the viewer's perspective?"
+    "Considering the relative positions of [A] and [B] in the image provided, is [A] to the right of [B] from the viewer's perspective?",
 ]
 
 right_true_responses = [
@@ -215,8 +215,8 @@ image_above_predicate_questions = [
     "From the image's perspective, is [A] located above [B]?",
     "From the image's perspective, would you say [A] is positioned over [B]?",
     "From the image's perspective, is [A] on top of [B]?",
-    "From the image's perspective, is [A] over [B]?"
-    "From the image's perspective, is [A] on [B]?"
+    "From the image's perspective, is [A] over [B]?",
+    "From the image's perspective, is [A] on [B]?",
 ]
 
 image_above_true_responses = [
@@ -224,8 +224,8 @@ image_above_true_responses = [
     "Yes, from the image's perspective, [A] is above [B].",
     "Correct, [A] appears higher than [B] in the image.",
     "Indeed, from the image's perspective, [A] is shown above [B].",
-    "Yes, from the image's perspective, [A] is on top of [B]."
-    "Yes, from the image's perspective, [A] is over [B]."
+    "Yes, from the image's perspective, [A] is on top of [B].",
+    "Yes, from the image's perspective, [A] is over [B].",
 ]
 
 image_above_false_responses = [
@@ -269,33 +269,33 @@ world_above_predicate_questions = [
     "From a real-world perspective, is [A] positioned over [B] based on gravity?",
     "From a real-world perspective, is [A] on top of [B]?",
     "From a real-world perspective, is [A] over [B]?",
-    "From a real-world perspective, is [A] on [B]?"
+    "From a real-world perspective, is [A] on [B]?",
 ]
 world_above_true_responses = [
     "Yes.",
     "Yes, from a real-world perspective, [A] is above [B].",
     "Correct, in the physical world, [A] is higher than [B].",
     "Indeed, from a real-world perspective, [A] stands above [B].",
-    "Yes, from a real-world perspective, [A] is on top of [B]."
-    "Yes, from a real-world perspective, [A] is over [B]"
+    "Yes, from a real-world perspective, [A] is on top of [B].",
+    "Yes, from a real-world perspective, [A] is over [B]",
 ]
 world_above_false_responses = [
     "No.",
     "No, from a real-world perspective, [A] is not above [B].",
     "Actually, [A] is physically below [B] in the real world.",
     "Incorrect, from a real-world perspective, [A] is lower than [B].",
-    "No, from a real-world perspective, [A] is not on top of [B]."
-    "No, from a real-world perspective, [A] is not over [B]"
+    "No, from a real-world perspective, [A] is not on top of [B].",
+    "No, from a real-world perspective, [A] is not over [B]",
 ]
 
 world_below_predicate_questions = [
-    "From a real-world perspective, is [A] below [B]?"
+    "From a real-world perspective, is [A] below [B]?",
     "From a real-world perspective, is [A] physically below [B]?",
     "From a real-world perspective, is [A] located beneath [B]?",
     "From a real-world perspective, does [A] sit lower than [B]?",
     "From a real-world perspective, is [A] positioned under [B] based on gravity?",
     "From a real-world perspective, is [A] beneath [B]?",
-    "From a real-world perspective, is [A] under [B]?"
+    "From a real-world perspective, is [A] under [B]?",
 ]
 
 world_below_true_responses = [
@@ -303,8 +303,8 @@ world_below_true_responses = [
     "Yes, from a real-world perspective, [A] is below [B].",
     "Correct, in the physical world, [A] is lower than [B].",
     "Indeed, from a real-world perspective, [A] is positioned beneath [B].",
-    "Yes, from a real-world perspective, [A] is beneath [B]."
-    "Yes, from a real-world perspective, [A] is under [B]."
+    "Yes, from a real-world perspective, [A] is beneath [B].",
+    "Yes, from a real-world perspective, [A] is under [B].",
 ]
 
 world_below_false_responses = [
@@ -312,8 +312,8 @@ world_below_false_responses = [
     "No, from a real-world perspective, [A] is not below [B].",
     "Actually, [A] is physically above [B] in the real world.",
     "Incorrect, from a real-world perspective, [A] is higher than [B].",
-    "No, from a real-world perspective, [A] is not beneath [B]."
-    "No, from a real-world perspective, [A] is not under [B]."
+    "No, from a real-world perspective, [A] is not beneath [B].",
+    "No, from a real-world perspective, [A] is not under [B].",
 ]
 
 behind_predicate_questions = [
@@ -325,7 +325,7 @@ behind_predicate_questions = [
     "Is [A] further to camera compared to [B]?",
     "Does [A] come behind [B]?",
     "Is [A] further to the viewer compared to [B]?",
-    "Considering the relative positions of [A] and [B] in the image provided, is [A] behind [B]?"
+    "Considering the relative positions of [A] and [B] in the image provided, is [A] behind [B]?",
 ]
 
 behind_true_responses = [
@@ -360,7 +360,7 @@ front_predicate_questions = [
     "Is [A] positioned before [B]?",
     "Is [A] closer to the viewer compared to [B]?",
     "Is the depth of [A] less than that of [B]?",
-    "Considering the relative positions of [A] and [B] in the image provided, is [A] in front of [B]?"
+    "Considering the relative positions of [A] and [B] in the image provided, is [A] in front of [B]?",
 ]
 
 front_true_responses = [
@@ -389,7 +389,7 @@ wide_predicate_questions = [
     "Is [A] wider than [B]?",
     "Does [A] have a greater width compared to [B]?",
     "Can you confirm if [A] is wider than [B]?",
-    "Considering the relative sizes of [A] and [B] in the image provided, is [A] wider than [B]?"
+    "Considering the relative sizes of [A] and [B] in the image provided, is [A] wider than [B]?",
 ]
 
 wide_true_responses = [
@@ -410,7 +410,7 @@ thin_predicate_questions = [
     "Is [A] thinner than [B]?",
     "Does [A] have a lesser width compared to [B]?",
     "Can you confirm if [A] is thinner than [B]?",
-    "Considering the relative sizes of [A] and [B] in the image provided, is [A] thinner than [B]?"
+    "Considering the relative sizes of [A] and [B] in the image provided, is [A] thinner than [B]?",
 ]
 
 thin_true_responses = [
@@ -431,7 +431,7 @@ tall_predicate_questions = [
     "Is [A] taller than [B]?",
     "Does [A] have a greater height compared to [B]?",
     "Can you confirm if [A] is taller than [B]?",
-    "Considering the relative sizes of [A] and [B] in the image provided, is [A] taller than [B]?"
+    "Considering the relative sizes of [A] and [B] in the image provided, is [A] taller than [B]?",
 ]
 
 tall_true_responses = [
@@ -452,7 +452,7 @@ short_predicate_questions = [
     "Is [A] shorter than [B]?",
     "Does [A] have a lesser height compared to [B]?",
     "Can you confirm if [A] is shorter than [B]?",
-    "Considering the relative sizes of [A] and [B] in the image provided, is [A] shorter than [B]?"
+    "Considering the relative sizes of [A] and [B] in the image provided, is [A] shorter than [B]?",
 ]
 
 short_true_responses = [
@@ -473,7 +473,7 @@ big_predicate_questions = [
     "Is [A] bigger than [B]?",
     "Does [A] have a larger size compared to [B]?",
     "Can you confirm if [A] is bigger than [B]?",
-    "Considering the relative sizes of [A] and [B] in the image provided, is [A] bigger than [B]?"
+    "Considering the relative sizes of [A] and [B] in the image provided, is [A] bigger than [B]?",
 ]
 
 big_true_responses = [
@@ -494,7 +494,7 @@ small_predicate_questions = [
     "Is [A] smaller than [B]?",
     "Does [A] have a smaller size compared to [B]?",
     "Can you confirm if [A] is smaller than [B]?",
-    "Considering the relative sizes of [A] and [B] in the image provided, is [A] smaller than [B]?"
+    "Considering the relative sizes of [A] and [B] in the image provided, is [A] smaller than [B]?",
 ]
 
 small_true_responses = [
@@ -512,11 +512,11 @@ small_false_responses = [
 ]
 
 touch_predicate_questions = [
-    "Is [A] beside [B]?"
+    "Is [A] beside [B]?",
     "Is [A] touching [B]?",
-    "Is [A] next to [B]?"
+    "Is [A] next to [B]?",
     "Is [A] in contact with [B]?",
-    "Is [A] with [B]?"
+    "Is [A] with [B]?",
     "Are [A] and [B] making contact?",
     "Is [A] placed right next to [B]?",
     "Are [A] and [B] beside each other?",
@@ -524,7 +524,7 @@ touch_predicate_questions = [
     "Is [A] directly adjacent to [B]?",
     "Can you see [A] touching [B]?",
     "Is [A] next to [B] and touching it?",
-    "Is the surface of [A] in direct contact with [B]?"
+    "Is the surface of [A] in direct contact with [B]?",
 ]
 touch_true_responses = [
     "Yes.",
@@ -544,9 +544,9 @@ touch_false_responses = [
     "No.",
     "No, [A] is not touching [B].",
     "No, [A] is not next to [B].",
-    "No, [A] is not beside [B]."
+    "No, [A] is not beside [B].",
     "No, [A] is not in contact with [B].",
-    "No, [A] is not with [B]."
+    "No, [A] is not with [B].",
     "[A] and [B] are not in contact.",
     "There is a gap between [A] and [B].",
     "[A] is not next to [B], and they're not touching.",
@@ -565,7 +565,7 @@ far_from_predicate_questions = [
     "Is [A] positioned far away from [B]?",
     "Is [A] not near [B]?",
     "Is [A] not close to [B]?",
-    "Would you consider [A] to be distant from [B]?"
+    "Would you consider [A] to be distant from [B]?",
 ]
 
 far_from_true_responses = [
@@ -604,7 +604,7 @@ contain_predicate_questions = [
     "Is [B] surrounded by [A]?",
     "Is [B] completely or partially inside [A]?",
     "Would you say [B] is part of [A]'s contents?",
-    "Could [B] be considered to be inside [A]?"
+    "Could [B] be considered to be inside [A]?",
 ]
 
 contain_true_responses = [
@@ -617,8 +617,8 @@ contain_true_responses = [
     "Absolutely, [B] is inside [A].",
     "Yes, [B] can be found within [A].",
     "Yes, [B] is surrounded by [A].",
-    "Yes, [A] is surrounding [B]."
-    "Yes, [B] is a part of [A]."
+    "Yes, [A] is surrounding [B].",
+    "Yes, [B] is a part of [A].",
 ]
 
 contain_false_responses = [
@@ -630,7 +630,7 @@ contain_false_responses = [
     "That’s incorrect, [B] is not inside [A].",
     "No, [B] is located outside of [A].",
     "Definitely not — [B] is not inside [A].",
-    "No, [B] is not surrounded by [A]."
+    "No, [B] is not surrounded by [A].",
 ]
 
 outside_predicate_questions = [
@@ -641,7 +641,7 @@ outside_predicate_questions = [
     "Is [A] completely or partially outside of [B]?",
     "Is [A] not inside [B]?",
     "Is [A] not within [B]?",
-    "Can we say [A] lies outside [B]?"
+    "Can we say [A] lies outside [B]?",
 ]
 
 outside_true_responses = [
@@ -716,7 +716,7 @@ point_close_predicate_questions = [
     "Does point [A] come in front of point [B]?",
     "Is point [A] positioned before point [B]?",
     "Is point [A] closer to viewer compared to point [B]?",
-    "Considering the positions of points [A] and [B], is point [A] closer to camera compared to point [B]?"
+    "Considering the positions of points [A] and [B], is point [A] closer to camera compared to point [B]?",
 ]
 
 point_close_true_responses = [
@@ -747,7 +747,7 @@ point_far_predicate_questions = [
     "Does point [A] come behind point [B]?",
     "Is point [A] positioned after point [B]?",
     "Is point [A] farther from viewer compared to point [B]?",
-    "Considering the positions of points [A] and [B], is point [A] farther from camera compared to point [B]?"
+    "Considering the positions of points [A] and [B], is point [A] farther from camera compared to point [B]?",
 ]
 
 point_far_true_responses = [
@@ -772,8 +772,8 @@ point_far_false_responses = [
 left_choice_questions = [
     "Which is more to the left, [A] or [B]?",
     "Between [A] and [B], which one appears on the left side from the viewer's perspective?",
-    "Who is positioned more to the left, [A] or [B]?",
-    "Considering the positions of objects [A] and [B] in the image provided, who is more to the left, [A] or [B]?"
+    "Which object is positioned more to the left, [A] or [B]?",
+    "Considering the positions of objects [A] and [B] in the image provided, who is more to the left, [A] or [B]?",
 ]
 
 left_choice_responses = [
@@ -786,8 +786,8 @@ left_choice_responses = [
 right_choice_questions = [
     "Which is more to the right, [A] or [B]?",
     "Between [A] and [B], which one appears on the right side from the viewer's perspective?",
-    "Who is positioned more to the right, [A] or [B]?",
-    "Considering the positions of objects [A] and [B] in the image provided, who is more to the right, [A] or [B]?"
+    "Which object is positioned more to the right, [A] or [B]?",
+    "Considering the positions of objects [A] and [B] in the image provided, who is more to the right, [A] or [B]?",
 ]
 
 right_choice_responses = [
@@ -803,9 +803,9 @@ right_choice_responses = [
 
 image_above_choice_questions = [
     "From the image's perspective, which is above, [A] or [B]?",
-    "From the image's perspective, who appears higher, [A] or [B]?",
+    "From the image's perspective, which object appears higher, [A] or [B]?",
     "From the image's perspective, which one is positioned higher, [A] or [B]?",
-    "From the image's perspective, between [A] and [B], who is located above?",
+    "From the image's perspective, between [A] and [B], which one is located above?",
 ]
 
 image_above_choice_responses = [
@@ -845,9 +845,9 @@ world_above_choice_questions = [
 world_above_choice_responses = [
     "[X].",
     "[X], from a real-world perspective.",
-    "[X] is physically higher.",
+    "[X] is physically above.",
     "From a 3D spatial view, [X] is above.",
-    "In real-world coordinates, [X] is higher.",
+    "In real-world perspective, [X] is above.",
 ]
 
 world_below_choice_questions = [
@@ -862,16 +862,16 @@ world_below_choice_responses = [
     "[X], from a real-world perspective.",
     "[X] is physically lower.",
     "From a 3D spatial view, [X] is below.",
-    "In real-world coordinates, [X] is lower.",
+    "In real-world perspective, [X] is lower.",
 ]
 
 front_choice_questions = [
     "Which is in front, [A] or [B]?",
     "Between [A] and [B], which one is positioned in front?",
-    "Who is more forward, [A] or [B]?",
+    "Which object is more forward, [A] or [B]?",
     "Which object is closer to the camera, [A] or [B]?",
-    "Which object is closer to the camera taking this photo, [A] or [B]?"
-    "Considering the positions of objects [A] and [B] in the image provided, who is in front, [A] or [B]?"
+    "Which object is closer to the camera taking this photo, [A] or [B]?",
+    "Considering the positions of objects [A] and [B] in the image provided, who is in front, [A] or [B]?",
 ]
 
 front_choice_responses = [
@@ -879,7 +879,7 @@ front_choice_responses = [
     "[X] is in front.",
     "Positioned in front is [X].",
     "[X] is more forward.",
-    "[X] is closer to the camera."
+    "[X] is closer to the camera.",
 ]
 
 behind_choice_questions = [
@@ -887,8 +887,8 @@ behind_choice_questions = [
     "Between [A] and [B], which one is positioned behind?",
     "Who is more distant, [A] or [B]?",
     "Which object is further away from the camera, [A] or [B]?",
-    "Which object is further away from the camera taking this photo, [A] or [B]?"
-    "Considering the positions of objects [A] and [B] in the image provided, who is behind, [A] or [B]?"
+    "Which object is further away from the camera taking this photo, [A] or [B]?",
+    "Considering the positions of objects [A] and [B] in the image provided, who is behind, [A] or [B]?",
 ]
 
 behind_choice_responses = [
@@ -896,14 +896,15 @@ behind_choice_responses = [
     "[X] is behind.",
     "Positioned behind is [X].",
     "[X] is more distant.",
-    "[X] is further away from the camera."
+    "[X] is further away from the camera.",
+    "[X] is further from the camera.",
 ]
 
 tall_choice_questions = [
     "Who is taller, [A] or [B]?",
     "Between [A] and [B], which one has more height?",
     "Which of these two, [A] or [B], stands taller?",
-    "Considering the sizes of objects [A] and [B] in the image provided, who is taller, [A] or [B]?"
+    "Considering the sizes of objects [A] and [B] in the image provided, who is taller, [A] or [B]?",
 ]
 
 tall_choice_responses = [
@@ -917,7 +918,7 @@ short_choice_questions = [
     "Who is shorter, [A] or [B]?",
     "Between [A] and [B], which one has less height?",
     "Which of these two, [A] or [B], stands shorter?",
-    "Considering the sizes of objects [A] and [B] in the image provided, who is shorter, [A] or [B]?"
+    "Considering the sizes of objects [A] and [B] in the image provided, who is shorter, [A] or [B]?",
 ]
 
 short_choice_responses = [
@@ -931,7 +932,7 @@ big_choice_questions = [
     "Who is bigger, [A] or [B]?",
     "Between [A] and [B], which one has larger size?",
     "Which of these two, [A] or [B], is bigger?",
-    "Considering the sizes of objects [A] and [B] in the image provided, who is bigger, [A] or [B]?"
+    "Considering the sizes of objects [A] and [B] in the image provided, who is bigger, [A] or [B]?",
 ]
 
 big_choice_responses = [
@@ -945,7 +946,7 @@ small_choice_questions = [
     "Who is smaller, [A] or [B]?",
     "Between [A] and [B], which one has smaller size?",
     "Which of these two, [A] or [B], is smaller?",
-    "Considering the sizes of objects [A] and [B] in the image provided, who is smaller, [A] or [B]?"
+    "Considering the sizes of objects [A] and [B] in the image provided, who is smaller, [A] or [B]?",
 ]
 
 small_choice_responses = [
@@ -956,10 +957,10 @@ small_choice_responses = [
 ]
 
 wide_choice_questions = [
-    "Which object is wider, [A] or [B]?"
+    "Which object is wider, [A] or [B]?",
     "Between [A] and [B], which one has larger width?",
     "Which of these two, [A] or [B], is wider?",
-    "Considering the sizes of objects [A] and [B] in the image provided, who is wider, [A] or [B]?"
+    "Considering the sizes of objects [A] and [B] in the image provided, who is wider, [A] or [B]?",
 ]
 
 wide_choice_responses = [
@@ -970,10 +971,10 @@ wide_choice_responses = [
 ]
 
 thin_choice_questions = [
-    "Which object is thinner, [A] or [B]?"
+    "Which object is thinner, [A] or [B]?",
     "Between [A] and [B], which one has smaller width?",
     "Which of these two, [A] or [B], is thinner?",
-    "Considering the sizes of objects [A] and [B] in the image provided, who is thinner, [A] or [B]?"
+    "Considering the sizes of objects [A] and [B] in the image provided, who is thinner, [A] or [B]?",
 ]
 
 thin_choice_responses = [
@@ -1012,26 +1013,26 @@ thin_choice_responses = [
 point_close_choice_questions = [
     "Which is in front, point [A] or point [B]?",
     "Between point [A] and point [B], which one is positioned in front?",
-    "Who is more forward, [A] or [B]?",  	
+    "Which point is more forward, [A] or [B]?",  	
     "Which point is closer to the camera, point [A] or point [B]?",
-    "Considering the points [A] and [B], who is in front, point [A] or point [B]?"
+    "Considering the points [A] and [B], which point is in front, point [A] or point [B]?",
 ]
 
 point_close_choice_responses = [
-    "Point [X]"
+    "Point [X]",
     "The point [X] is in front.",
     "Positioned in front is point [X].",
     "The point [X] is more forward.",
     "The point [X] is closer.",
-    "The point [X] is closer to the camera."
+    "The point [X] is closer to the camera.",
 ]
 
 point_far_choice_questions = [
     "Which is behind, point [A] or point [B]?",
     "Between point [A] and point [B], which one is positioned behind?",
-    "Who is more distant from viewer, [A] or [B]?",
-    "Which point is closer to the camera, point [A] or point [B]?",
-    "Considering the points [A] and [B], who is behind, point [A] or point [B]?"
+    "Which point is more distant from viewer, [A] or [B]?",
+    "Which point is further to the camera, point [A] or point [B]?",
+    "Considering the points [A] and [B], which point is behind, point [A] or point [B]?",
 ]
 
 point_far_choice_responses = [
@@ -1040,7 +1041,7 @@ point_far_choice_responses = [
     "Positioned behind is point [X].",
     "The point [X] is more distant.",
     "The point [X] is farther.",
-    "The point [X] is farther from the camera."
+    "The point [X] is farther from the camera.",
 ]
 
 # Direction
@@ -1163,7 +1164,7 @@ height_questions = [
     "What is the height of [A]?",
     "How tall is [A]?",
     "What are the dimensions of [A] in terms of height?",
-    "Could you tell me the vericall size of [A]?",
+    "Could you tell me the vertical size of [A]?",
     "What is the approximate height of [A]?",
     "How tall is [A]?",
     "How much space does [A] occupy vertically?",
@@ -1188,7 +1189,7 @@ how_horizontal_face_object_questions = [
     "Should I rotate toward the left or the right to look at [A]?",
     "From my current position, do I need to turn left or right to face [A]?",
     "To directly face [A], is it better to turn left or right?",
-    "In order to face [A], should I rotate leftwards or rightwards?"
+    "In order to face [A], should I rotate leftwards or rightwards?",
 ]
 
 how_horizontal_face_object_responses = [
@@ -1199,9 +1200,9 @@ how_horizontal_face_object_responses = [
     "It’s best to rotate [R] around [X] degrees.",
     "You should look [R] and rotate roughly [X] degrees.",
     "To align with it, rotate [R] about [X]°.",
-    "Face [R] and turn [X] degrees.",
+    "Rotate [R] and turn [X] degrees.",
     "A [X] degree turn to the [R] will do.",
-    "Turn [R] by [X] degrees to look at [A]."
+    "Turn [R] by [X] degrees to look at [A].",
 ]
 
 how_vertical_face_object_questions = [
@@ -1214,7 +1215,7 @@ how_vertical_face_object_questions = [
     "Is [A] located above or below my current view — should I rotate up or down?",
     "To directly face [A], should I rotate upward or downward?",
     "Do I need to rotate up or down to see [A] clearly?",
-    "Should I rotate my view up or down to look at [A]?"
+    "Should I rotate my view up or down to look at [A]?",
 ]
 
 how_vertical_face_object_responses = [
@@ -1223,11 +1224,11 @@ how_vertical_face_object_responses = [
     "To face it, rotate [R] by about [X]°.",
     "It's best to rotate [R] around [X] degrees.",
     "To align with it, rotate [R] by [X] degrees.",
-    "Rotate [R] and adjust your view roughly [X] degrees.",
+    "Rotate [R] by roughly [X] degrees.",
     "You need to rotate [R] about [X]° to see it properly.",
     "A [X] degree rotation [R] will bring [A] into view.",
     "Try rotating [R] by [X] degrees.",
-    "Rotate your view [R] by [X]° to face [A]."
+    "Rotate your view [R] by [X]° to face [A].",
 ]
 
 facing_object_questions = [
@@ -1241,11 +1242,11 @@ facing_object_questions = [
 
 facing_object_true_responses = [
     "Yes.",
-    "Yes, [A] faces towards [B]",
+    "Yes, [A] faces towards [B].",
     "Yes, [A] is oriented towards [B].",
     "Yes, [A] is aimed at [B].",
     "Yes, [A] is facing [B].",
-    "Yes, [A] is turned towards [B]."
+    "Yes, [A] is turned towards [B].",
 ]
 
 facing_object_false_responses = [
@@ -1254,7 +1255,7 @@ facing_object_false_responses = [
     "No, [A] is not oriented towards [B].",
     "No, [A] is not aimed at [B].",
     "No, [A] does not turn towards [B].",
-    "No, [A] is not turned towards [B]."
+    "No, [A] is not turned towards [B].",
 ]
 facing_away_object_questions = [
     "Is [A] facing away from [B]?",
@@ -1262,7 +1263,7 @@ facing_away_object_questions = [
     "Is [A] looking in the opposite direction of [B]?",
     "Is [A] positioned with its back to [B]?",
     "Is [A] oriented away from [B]?",
-    "Is [B] at the back of [A]?"
+    "Is [B] at the back of [A]?",
 ]
 facing_away_object_true_responses = [
     "Yes.",
@@ -1272,7 +1273,7 @@ facing_away_object_true_responses = [
     "That’s right, [A] is facing away from [B].",
     "Absolutely, [A] is directed away from [B].",
     "Yes, [A]'s orientation is away from [B].",
-    "Yes, [B] is at the back of [A]."
+    "Yes, [B] is at the back of [A].",
 ]
 
 facing_away_object_false_responses = [
@@ -1283,28 +1284,28 @@ facing_away_object_false_responses = [
     "That’s not correct — [A] is not looking away from [B].",
     "No, [A] is not facing the opposite direction of [B].",
     "No, [A]'s orientation is not away from [B].",
-    "No, [B] is not at the back of [A]."
+    "No, [B] is not at the back of [A].",
 ]
 
 angle_of_objects_questions = [
-    "What is the angle between the front of [A] and the front of [B]?",
-    "How many degrees apart are the front directions of [A] and [B]?",
+    "What is the angle between the facing direction of [A] and the facing direction of [B]?",
+    "How many degrees apart are the facing directions of [A] and [B]?",
     "Could you tell me the angle between the facing directions of [A] and [B]?",
     "How different are the orientations of [A] and [B] in degrees?",
-    "What's the angular difference between [A] and [B]'s front directions?",
-    "What is the degree difference between the fronts of [A] and [B]?",
-    "Can you tell me how much [A] and [B] differ in facing direction?"
+    "What's the angular difference between [A] and [B]'s facing directions?",
+    "What is the degree difference between the facing directions of [A] and [B]?",
+    "Can you tell me how much [A] and [B] differ in facing direction?",
 ]
 
 angle_of_objects_responses = [
     "[X] degrees.",
-    "The angle between the front of [A] and the front of [B] is [X] degrees.",
+    "The angle between the facing direction of [A] and the facing direction of [B] is [X] degrees.",
     "They differ by [X] degrees in their facing directions.",
     "The angular difference between [A] and [B] is [X] degrees.",
-    "The front directions of [A] and [B] are [X] degrees apart.",
+    "The facing directions of [A] and [B] are [X] degrees apart.",
     "[A] and [B] are facing [X] degrees away from each other.",
-    "There is a [X]-degree angle between the fronts of [A] and [B].",
-    "[X] degrees separate the front orientations of [A] and [B]."
+    "There is a [X]-degree angle between the facing directions of [A] and [B].",
+    "[X] degrees separate the facing orientations of [A] and [B].",
 ]
 
 # choice relation
@@ -1324,7 +1325,7 @@ choice_left_responses = [
     "Based on their positions, [A] is located to the left of [B].",
     "[A] is positioned on [B]'s left side.",
     "Clearly, [A] is on the left of [B] in the image.",
-    "From the image, it's evident that [A] is to the left of [B]."
+    "From the image, it's evident that [A] is to the left of [B].",
 ]
 
 choice_right_responses = [
@@ -1333,7 +1334,7 @@ choice_right_responses = [
     "Based on their positions, [A] is located to the right of [B].",
     "[A] is positioned on [B]'s right side.",
     "Clearly, [A] is on the right of [B] in the image.",
-    "From the image, it's evident that [A] is to the right of [B]."
+    "From the image, it's evident that [A] is to the right of [B].",
 ]
 
 # -----------------------
@@ -1352,7 +1353,7 @@ image_choice_above_responses = [
     "From the image's perspective, [A] appears above [B].",
     "Based on their image positions, [A] is located above [B].",
     "[A] is situated higher than [B] in the image.",
-    "Clearly, from the image's perspective, [A] is above [B]."
+    "Clearly, from the image's perspective, [A] is above [B].",
 ]
 
 image_choice_below_responses = [
@@ -1360,7 +1361,7 @@ image_choice_below_responses = [
     "From the image's perspective, [A] appears below [B].",
     "Based on their image positions, [A] is located beneath [B].",
     "[A] is situated lower than [B] in the image.",
-    "Clearly, from the image's perspective, [A] is below [B]."
+    "Clearly, from the image's perspective, [A] is below [B].",
 ]
 
 # -----------------------
@@ -1379,7 +1380,7 @@ world_choice_above_responses = [
     "From a real-world perspective, [A] is physically above [B].",
     "In terms of real-world spatial position, [A] is above [B].",
     "[A] is situated higher than [B] in the real world.",
-    "Clearly, from a real-world perspective, [A] is above [B]."
+    "Clearly, from a real-world perspective, [A] is above [B].",
 ]
 
 world_choice_below_responses = [
@@ -1387,7 +1388,7 @@ world_choice_below_responses = [
     "From a real-world perspective, [A] is physically below [B].",
     "In terms of real-world spatial position, [A] is below [B].",
     "[A] is situated lower than [B] in the real world.",
-    "Clearly, from a real-world perspective, [A] is below [B]."
+    "Clearly, from a real-world perspective, [A] is below [B].",
 ]
 
 choice_front_behind_questions = [
@@ -1402,7 +1403,7 @@ choice_front_responses = [
     "In the image, [A] appears in front of [B].",
     "[A] is positioned closer to the viewer than [B].",
     "Clearly, [A] is in front of [B].",
-    "Visually, [A] is located in front of [B]."
+    "Visually, [A] is located in front of [B].",
 ]
 
 choice_behind_responses = [
@@ -1410,32 +1411,32 @@ choice_behind_responses = [
     "In the image, [A] appears behind [B].",
     "[A] is positioned farther from the viewer than [B].",
     "Clearly, [A] is behind [B].",
-    "Visually, [A] is located behind [B]."
+    "Visually, [A] is located behind [B].",
 ]
 
 choice_wide_thin_questions = [
-    "Considering the positions of [A] and [B] in the image, is [A] wider or thinner than [B]?",
+    "Considering the sizes of [A] and [B] in the image, is [A] wider or thinner than [B]?",
     "Is [A] wider or thinner than [B]?",
     "In terms of width, does [A] look wider or thinner when compared to [B]?",
-    "Looking at their shapes, would you say [A] is wider or thinner than [B]?",
+    "Looking at their sizes, would you say [A] is wider or thinner than [B]?",
 ]
 
 choice_wide_responses = [
     "[A] is wider than [B].",
     "In the image, [A] appears to be wider than [B].",
-    "Considering their positions, [A] looks broader than [B].",
-    "Clearly, [A] has more width compared to [B]."
+    "Considering their sizes, [A] looks broader than [B].",
+    "Clearly, [A] has more width compared to [B].",
 ]
 
 choice_thin_responses = [
     "[A] is thinner than [B].",
     "In the image, [A] appears to be more narrow than [B].",
-    "Considering their positions, [A] looks slimmer than [B].",
-    "Clearly, [A] has less width compared to [B]."
+    "Considering their sizes, [A] looks slimmer than [B].",
+    "Clearly, [A] has less width compared to [B].",
 ]
 
 choice_tall_short_questions = [
-    "Considering the positions of [A] and [B] in the image, is [A] taller or shorter than [B]?",
+    "Considering the sizes of [A] and [B] in the image, is [A] taller or shorter than [B]?",
     "Is [A] taller or shorter than [B]?",
     "In terms of height, does [A] look taller or shorter compared to [B]?",
     "From their relative heights in the image, would you say [A] is taller or shorter than [B]?",
@@ -1444,44 +1445,44 @@ choice_tall_short_questions = [
 choice_tall_responses = [
     "[A] is taller than [B].",
     "In the image, [A] appears to be taller than [B].",
-    "Considering their positions, [A] has more height than [B].",
-    "Clearly, [A] is higher in height compared to [B]."
+    "Considering their sizes, [A] has more height than [B].",
+    "Clearly, [A] is taller compared to [B].",
 ]
 
 choice_short_responses = [
     "[A] is shorter than [B].",
     "In the image, [A] appears to be shorter than [B].",
-    "Considering their positions, [A] has less height than [B].",
-    "Clearly, [A] is lower in height compared to [B]."
+    "Considering their sizes, [A] has less height than [B].",
+    "Clearly, [A] is shorter compared to [B].",
 ]
 
 choice_big_small_questions = [
-    "Considering the positions of [A] and [B] in the image, is [A] bigger or smaller than [B]?",
+    "Considering the sizes of [A] and [B] in the image, is [A] bigger or smaller than [B]?",
     "Is [A] bigger or smaller than [B]?",
     "In terms of size, does [A] appear bigger or smaller than [B]?",
     "Looking at the image, does [A] seem bigger or smaller compared to [B]?",
-    "Based on their sizes in the image, would you say [A] is bigger or smaller than [B]?"
+    "Based on their sizes in the image, would you say [A] is bigger or smaller than [B]?",
 ]
 
 choice_big_responses = [
     "[A] is bigger than [B].",
     "In the image, [A] appears to be larger than [B].",
-    "Considering their positions, [A] takes up more space than [B].",
-    "Clearly, [A] is larger in size than [B]."
+    "Considering their sizes, [A] takes up more space than [B].",
+    "Clearly, [A] is larger in size than [B].",
 ]
 
 choice_small_responses = [
     "[A] is smaller than [B].",
     "In the image, [A] appears to be smaller than [B].",
-    "Considering their positions, [A] takes up less space than [B].",
-    "Clearly, [A] is smaller in size than [B]."
+    "Considering their sizes, [A] takes up less space than [B].",
+    "Clearly, [A] is smaller in size than [B].",
 ]
 
 choice_point_close_far_questions = [
     "Considering the positions of point [A] and point [B], is point [A] closer or farther from the camera than point [B]?",
     "Is point [A] closer or farther from the camera than point [B]?",
     "Is point [A] positioned closer to the camera than point [B]?",
-    "Does point [A] appear closer or farther from the camera than point [B]?"
+    "Does point [A] appear closer or farther from the camera than point [B]?",
 ]
 
 choice_point_close_responses = [
@@ -1489,7 +1490,7 @@ choice_point_close_responses = [
     "Point [A] is closer to the camera than point [B].",
     "Point [A] appears to be closer to the viewer than point [B].",
     "Point [A] is positioned closer to the camera compared to point [B].",
-    "Clearly, point [A] is closer to the camera than point [B]."
+    "Clearly, point [A] is closer to the camera than point [B].",
 ]
 
 choice_point_far_responses = [
@@ -1497,7 +1498,7 @@ choice_point_far_responses = [
     "Point [A] is farther from the camera than point [B].",
     "Point [A] appears to be farther away from the viewer than point [B].",
     "Point [A] is positioned farther from the camera compared to point [B].",
-    "Clearly, point [A] is more distant from the camera than point [B]."
+    "Clearly, point [A] is more distant from the camera than point [B].",
 ]
 
 choice_inside_outside_questions = [
@@ -1508,26 +1509,26 @@ choice_inside_outside_questions = [
     "Is [A] situated inside [B] or outside?",
     "Do you think [A] is within [B], or outside of it?",
     "Is [A] inside the boundaries of [B], or outside?",
-    "Which is correct: [A] is inside [B], or outside of it?"
+    "Which is correct: [A] is inside [B], or outside of it?",
 ]
 
 choice_inside_responses = [
     "[A] is inside [B].",
     "The correct answer is: inside.",
-    "Yes, [A] is enclosed within [B].",
+    "[A] is enclosed within [B].",
     "[A] is located inside [B].",
     "[A] lies within the bounds of [B].",
     "[A] is spatially positioned inside [B].",
     "[A] exists entirely within [B].",
     "[A] fits inside [B].",
     "[A] is contained in [B].",
-    "[A] can be found inside [B]."
+    "[A] can be found inside [B].",
 ]
 
 choice_outside_responses = [
     "[A] is outside [B].",
     "The correct answer is: outside.",
-    "No, [A] is not inside [B], it's outside.",
+    "[A] is not inside [B], it's outside.",
     "[A] is located beyond the bounds of [B].",
     "[A] lies outside [B].",
     "[A] is not enclosed by [B].",
@@ -1544,38 +1545,38 @@ close_anchor_questions = [
     "When comparing their distances from [C], does [A] or [B] seem closer?",
     "Looking at the image, which one is located closer to [C], [A] or [B]?",
     "Which object lies nearer to the anchor point [C], [A] or [B]?",
-    "Considering their positions, is [A] positioned closer to [C] than [B]?"
+    "Considering their positions, is [A] positioned closer to [C] than [B]?",
 ]
 
 close_anchor_responses = [
-    "[X]."
+    "[X].",
     "[X] is closer to [C].",
     "The object closer to [C] is [X].",
     "Based on the image, [X] appears to be nearer to [C].",
     "[X] lies closer to [C] than the other object.",
     "[X] is positioned closer to the anchor [C].",
-    "Among the two, [X] is located nearer to [C]."
+    "Among the two, [X] is located nearer to [C].",
 ]
 
 # which obj far to anchor 
 far_anchor_questions = [
-    "Estimate the real-world distances between objects in this image. Which object is further to [C], [A] or [B]?",
-    "Based on their spatial positions, is [A] or [B] further to [C]?",
-    "From the image, which object appears to be nearer to [C], [A] or [B]?",
+    "Estimate the real-world distances between objects in this image. Which object is further from [C], [A] or [B]?",
+    "Based on their spatial positions, is [A] or [B] further from [C]?",
+    "From the image, which object appears to be farther from [C], [A] or [B]?",
     "When comparing their distances from [C], does [A] or [B] seem further?",
     "Looking at the image, which one is located further to [C], [A] or [B]?",
     "Which object lies further to the anchor point [C], [A] or [B]?",
-    "Considering their positions, is [A] positioned further to [C] than [B]?"
+    "Considering their positions, is [A] positioned further to [C] than [B]?",
 ]
 
 far_anchor_responses = [
-    "[X]."
+    "[X].",
     "[X] is further to [C].",
     "The object further to [C] is [X].",
     "Based on the image, [X] appears to be further to [C].",
     "[X] lies further to [C] than the other object.",
     "[X] is positioned further to the anchor [C].",
-    "Among the two, [X] is located further to [C]."
+    "Among the two, [X] is located further to [C].",
 ]
 
 find_one_anchor_left_obj_questions = [
@@ -1625,7 +1626,7 @@ find_one_anchor_single_left_obj_questions = [
     "There is [class_name] on the left of [anchor]. Please point to it and provide its 2D coordinates.",
     "Please find [class_name] located on the left of [anchor]. Please provide its 2D coordinates.",
     "[class_name] is found on the left of [anchor]. Please provide its 2D coordinates.",
-    "In the image, there is a [anchor]. Pinpoint [class_name] on the left of the [anchor]. Please provide its 2D coordinates."
+    "In the image, there is a [anchor]. Pinpoint [class_name] on the left of the [anchor]. Please provide its 2D coordinates.",
 
     "Please point to [class_name] on the left of [anchor]. Your answer should be formatted as a tuple, i.e. [(x, y)], where the tuple contains the x and y coordinates of a point satisfying the conditions above. The coordinates should be between 0 and 1, indicating the normalized pixel location of the point.",
     "There is one [class_name] on the left side of [anchor]. Please locate it and provide its 2D coordinates.",
@@ -1653,7 +1654,7 @@ find_one_anchor_single_left_obj_questions = [
 ]
 
 find_one_anchor_left_obj_responses = [
-    "[X]"
+    "[X]",
 ]
 
 find_one_anchor_right_obj_questions = [
@@ -1688,7 +1689,7 @@ find_one_anchor_right_obj_questions = [
     "Starting from the [anchor], which [class_name] is the [range] one to the right? Your answer should be formatted as a tuple, i.e. [(x, y)], where the tuple contains the x and y coordinates of a point satisfying the conditions above.",
     "Please find the [range] [class_name] to the right when counting from the [anchor]. Your answer should be formatted as a tuple, i.e. [(x, y)], where the tuple contains the x and y coordinates of a point satisfying the conditions above.",
     "From the [anchor], count [range] [class_name] to the right and point to it. Your answer should be formatted as a tuple, i.e. [(x, y)], where the tuple contains the x and y coordinates of a point satisfying the conditions above.",
-    "In the image, there is a [anchor]. Pinpoint the [range] [class_name] counting from the right of the [anchor]. Your answer should be formatted as a tuple, i.e. [(x, y)], where the tuple contains the x and y coordinates of a point satisfying the conditions above."
+    "In the image, there is a [anchor]. Pinpoint the [range] [class_name] counting from the right of the [anchor]. Your answer should be formatted as a tuple, i.e. [(x, y)], where the tuple contains the x and y coordinates of a point satisfying the conditions above.",
 ]
 
 find_one_anchor_single_right_obj_questions = [
@@ -1726,11 +1727,11 @@ find_one_anchor_single_right_obj_questions = [
     "There is [class_name] on the right of [anchor]. Your answer should be formatted as a tuple, i.e. [(x, y)], where the tuple contains the x and y coordinates of a point satisfying the conditions above.",
     "Please find [class_name] located on the right of [anchor]. Your answer should be formatted as a tuple, i.e. [(x, y)], where the tuple contains the x and y coordinates of a point satisfying the conditions above.",
     "[class_name] is found on the right of [anchor]. Your answer should be formatted as a tuple, i.e. [(x, y)], where the tuple contains the x and y coordinates of a point satisfying the conditions above.",
-    "In the image, there is a [anchor]. Pinpoint [class_name] on the right of the [anchor]. Your answer should be formatted as a tuple, i.e. [(x, y)], where the tuple contains the x and y coordinates of a point satisfying the conditions above."
+    "In the image, there is a [anchor]. Pinpoint [class_name] on the right of the [anchor]. Your answer should be formatted as a tuple, i.e. [(x, y)], where the tuple contains the x and y coordinates of a point satisfying the conditions above.",
 ]
 
 find_one_anchor_right_obj_responses = [
-    "[X]"
+    "[X]",
 ]
 
 find_one_anchor_front_obj_questions = [
@@ -1807,7 +1808,7 @@ find_one_anchor_single_front_obj_questions = [
 ]
 
 find_one_anchor_front_obj_responses = [
-    "[X]"
+    "[X]",
 ]
 
 find_one_anchor_behind_obj_questions = [
@@ -1842,7 +1843,7 @@ find_one_anchor_behind_obj_questions = [
     "Starting from the [anchor], which [class_name] is the [range] one behind? Your answer should be formatted as a tuple, i.e. [(x, y)], where the tuple contains the x and y coordinates of a point satisfying the conditions above.",
     "Please find the [range] [class_name] behind when counting from the [anchor]. Your answer should be formatted as a tuple, i.e. [(x, y)], where the tuple contains the x and y coordinates of a point satisfying the conditions above.",
     "From the [anchor], count [range] [class_name]s backward and point to it. Your answer should be formatted as a tuple, i.e. [(x, y)], where the tuple contains the x and y coordinates of a point satisfying the conditions above.",
-    "In the image, there is a [anchor]. Pinpoint the [range] [class_name] behind the [anchor]. Your answer should be formatted as a tuple, i.e. [(x, y)], where the tuple contains the x and y coordinates of a point satisfying the conditions above."
+    "In the image, there is a [anchor]. Pinpoint the [range] [class_name] behind the [anchor]. Your answer should be formatted as a tuple, i.e. [(x, y)], where the tuple contains the x and y coordinates of a point satisfying the conditions above.",
 ]
 
 find_one_anchor_single_behind_obj_questions = [
@@ -1880,11 +1881,11 @@ find_one_anchor_single_behind_obj_questions = [
     "There is a [class_name] behind the [anchor]. Please point to it and provide its 2D coordinates.",
     "Please find the [class_name] located behind the [anchor]. Your answer should be formatted as a tuple, i.e. [(x, y)], where the tuple contains the x and y coordinates of a point satisfying the conditions above.",
     "The [class_name] is found behind the [anchor]. Your answer should be formatted as a tuple, i.e. [(x, y)], where the tuple contains the x and y coordinates of a point satisfying the conditions above.",
-    "In the image, there is a [anchor]. Pinpoint the [class_name] behind the [anchor]. Your answer should be formatted as a tuple, i.e. [(x, y)], where the tuple contains the x and y coordinates of a point satisfying the conditions above."
+    "In the image, there is a [anchor]. Pinpoint the [class_name] behind the [anchor]. Your answer should be formatted as a tuple, i.e. [(x, y)], where the tuple contains the x and y coordinates of a point satisfying the conditions above.",
 ]
 
 find_one_anchor_behind_obj_responses = [
-    "[X]"
+    "[X]",
 ]
 
 find_one_anchor_image_above_obj_questions = [
@@ -1919,7 +1920,7 @@ find_one_anchor_image_above_obj_questions = [
     "From the image's perspective, starting from the [anchor], which [class_name] is the [range] one above? Your answer should be formatted as a tuple, i.e. [(x, y)], where the tuple contains the x and y coordinates of a point satisfying the conditions above.",
     "From the image's perspective, please find the [range] [class_name] above when counting from the [anchor]. Your answer should be formatted as a tuple, i.e. [(x, y)], where the tuple contains the x and y coordinates of a point satisfying the conditions above.",
     "From the image's perspective, count [range] [class_name]s upward from the [anchor] and point to it. Your answer should be formatted as a tuple, i.e. [(x, y)], where the tuple contains the x and y coordinates of a point satisfying the conditions above.",
-    "From the image's perspective, there is a [anchor]. Pinpoint the [range] [class_name] above it. Your answer should be formatted as a tuple, i.e. [(x, y)], where the tuple contains the x and y coordinates of a point satisfying the conditions above."
+    "From the image's perspective, there is a [anchor]. Pinpoint the [range] [class_name] above it. Your answer should be formatted as a tuple, i.e. [(x, y)], where the tuple contains the x and y coordinates of a point satisfying the conditions above.",
 ]
 
 find_one_anchor_single_image_above_obj_questions = [
@@ -1957,7 +1958,7 @@ find_one_anchor_single_image_above_obj_questions = [
     "From the image's perspective, there is a [class_name] above the [anchor]. Please point to it and provide its 2D coordinates.",
     "From the image's perspective, please find the [class_name] located above the [anchor]. Your answer should be formatted as a tuple, i.e. [(x, y)], where the tuple contains the x and y coordinates of a point satisfying the conditions above.",
     "From the image's perspective, the [class_name] is found above the [anchor]. Your answer should be formatted as a tuple, i.e. [(x, y)], where the tuple contains the x and y coordinates of a point satisfying the conditions above.",
-    "From the image's perspective, in the image, there is a [anchor]. Pinpoint the [class_name] above it. Your answer should be formatted as a tuple, i.e. [(x, y)], where the tuple contains the x and y coordinates of a point satisfying the conditions above."
+    "From the image's perspective, in the image, there is a [anchor]. Pinpoint the [class_name] above it. Your answer should be formatted as a tuple, i.e. [(x, y)], where the tuple contains the x and y coordinates of a point satisfying the conditions above.",
 ]
 
 find_one_anchor_image_above_obj_responses = [
@@ -1996,7 +1997,7 @@ find_one_anchor_image_below_obj_questions = [
     "From the image's perspective, starting from the [anchor], which [class_name] is the [range] one below? Your answer should be formatted as a tuple, i.e. [(x, y)], where the tuple contains the x and y coordinates of a point satisfying the conditions above.",
     "From the image's perspective, please find the [range] [class_name] below when counting from the [anchor]. Your answer should be formatted as a tuple, i.e. [(x, y)], where the tuple contains the x and y coordinates of a point satisfying the conditions above.",
     "From the image's perspective, count [range] [class_name]s downward from the [anchor] and point to it. Your answer should be formatted as a tuple, i.e. [(x, y)], where the tuple contains the x and y coordinates of a point satisfying the conditions above.",
-    "From the image's perspective, there is a [anchor]. Pinpoint the [range] [class_name] below it. Your answer should be formatted as a tuple, i.e. [(x, y)], where the tuple contains the x and y coordinates of a point satisfying the conditions above."
+    "From the image's perspective, there is a [anchor]. Pinpoint the [range] [class_name] below it. Your answer should be formatted as a tuple, i.e. [(x, y)], where the tuple contains the x and y coordinates of a point satisfying the conditions above.",
 ]
 
 find_one_anchor_single_image_below_obj_questions = [

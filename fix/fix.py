@@ -139,7 +139,7 @@ if __name__ == "__main__":
     frame_dirs = find_all_frame_dirs(ROOT_DIR)
 
     # 多进程删除 visual_choice.json 文件
-    deleted_json_files = delete_template_json_parallel(frame_dirs, filename="vacant_qa.json")
+    deleted_json_files = delete_template_json_parallel(frame_dirs, filename="choice_qa.json")
 
     # # 多进程删除子目录，例如 image_with_bbox 和 image_with_points
     # deleted_bbox_folders = delete_folder_parallel(frame_dirs, folder_name="image_with_bbox")
