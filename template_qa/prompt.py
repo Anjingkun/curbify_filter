@@ -2554,70 +2554,76 @@ class PromptGenerator:
         results = []
 
         # 一元谓词函数列表（单个物体）
-        one_object_can = [
-            obj_depth_data,
-            point_depth_data,
-            fine_grain_object_2_point,
-            point_2_fine_grain_object,
-            object_width_data,
-            object_height_data,
-            how_horizontal_face_object,
-            how_vertical_face_object
+        obj2point = [
+            fine_grain_object_2_point
         ]
 
-        # 二元谓词函数列表（物体对之间的关系）
-        two_object_can = {
-            "left_right_predicate": [
-                left_predicate, right_predicate, left_choice, right_choice, choice_left_right
-            ],
-            "obj_front_behind_predicate": [
-                front_predicate, behind_predicate, front_choice, behind_choice, choice_front_behind
-            ],
-            "point_close_far_predicate": [
-                point_close_prediction, point_far_prediction, point_close_choice, point_far_choice, choice_point_close_far
-            ],
-            "image_above_below_predicate": [
-                image_above_predicate, image_below_predicate, image_above_choice, image_below_choice, image_choice_above_below
-            ],
-            "world_above_below_predicate": [
-                world_above_predicate, world_below_predicate, world_above_choice, world_below_choice, world_choice_above_below
-            ],
-            "wide_thin": [
-                wide_predicate, thin_predicate, wide_choice, thin_choice, choice_wide_thin
-            ],
-            "tall_short": [
-                tall_predicate, short_predicate, tall_choice, short_choice, choice_tall_short
-            ],
-            "big_small":[
-                big_predicate, small_predicate, big_choice, small_choice, choice_big_small
-            ],
-            "inside_outside": [
-                contain_predicate, outside_predicate, choice_inside_outside
-            ],
-            "touch_far": [
-                touch_predicate, far_from_predicate
-            ],
-            "facing": [
-                is_facing_object, is_facing_away_from_object,
-            ],
-            "angle" : [
-                angle_of_objects
-            ],
-            "distence": [
-                object_distence_data
-            ],
-            "anchor" : [
-                find_one_anchor_left_obj, find_one_anchor_right_obj,
-                find_one_anchor_image_above_obj, find_one_anchor_image_below_obj, find_one_anchor_world_above_obj, find_one_anchor_world_below_obj,
-                find_one_anchor_front_obj, find_one_anchor_behind_obj
-            ]
-        }
+        # one_object_can = [
+        #     obj_depth_data,
+        #     point_depth_data,
+        #     # fine_grain_object_2_point,
+        #     point_2_fine_grain_object,
+        #     object_width_data,
+        #     object_height_data,
+        #     how_horizontal_face_object,
+        #     how_vertical_face_object
+        # ]
+
+        # # 二元谓词函数列表（物体对之间的关系）
+        # two_object_can = {
+        #     "left_right_predicate": [
+        #         left_predicate, right_predicate, left_choice, right_choice, choice_left_right
+        #     ],
+        #     "obj_front_behind_predicate": [
+        #         front_predicate, behind_predicate, front_choice, behind_choice, choice_front_behind
+        #     ],
+        #     "point_close_far_predicate": [
+        #         point_close_prediction, point_far_prediction, point_close_choice, point_far_choice, choice_point_close_far
+        #     ],
+        #     "image_above_below_predicate": [
+        #         image_above_predicate, image_below_predicate, image_above_choice, image_below_choice, image_choice_above_below
+        #     ],
+        #     "world_above_below_predicate": [
+        #         world_above_predicate, world_below_predicate, world_above_choice, world_below_choice, world_choice_above_below
+        #     ],
+        #     "wide_thin": [
+        #         wide_predicate, thin_predicate, wide_choice, thin_choice, choice_wide_thin
+        #     ],
+        #     "tall_short": [
+        #         tall_predicate, short_predicate, tall_choice, short_choice, choice_tall_short
+        #     ],
+        #     "big_small":[
+        #         big_predicate, small_predicate, big_choice, small_choice, choice_big_small
+        #     ],
+        #     "inside_outside": [
+        #         contain_predicate, outside_predicate, choice_inside_outside
+        #     ],
+        #     "touch_far": [
+        #         touch_predicate, far_from_predicate
+        #     ],
+        #     "facing": [
+        #         is_facing_object, is_facing_away_from_object,
+        #     ],
+        #     "angle" : [
+        #         angle_of_objects
+        #     ],
+        #     "distence": [
+        #         object_distence_data
+        #     ],
+
+        # }
+
+        anchor_obj_to_point = [
+            find_one_anchor_left_obj, find_one_anchor_right_obj,
+            find_one_anchor_image_above_obj, find_one_anchor_image_below_obj, find_one_anchor_world_above_obj, find_one_anchor_world_below_obj,
+            find_one_anchor_front_obj, find_one_anchor_behind_obj
+        ]
 
         # 三元谓词函数列表（涉及三个物体的空间关系）
-        three_object_can = [
-            close_anchor,
-            far_anchor
-        ] 
+        # three_object_can = [
+        #     close_anchor,
+        #     far_anchor
+        # ] 
 
 
         # 无目标时，直接返回空列表
@@ -2634,9 +2640,17 @@ class PromptGenerator:
             one_obj_selected_combinations = one_obj_all_combinations[:1]
             one_obj_object_pairs = [(detections[i], i) for (i,) in one_obj_selected_combinations]
 
+            # for A, A_index in one_obj_object_pairs:
+            #     valid_prompt_variants = one_object_can
+            #     selected_predicates_choices = random.sample(valid_prompt_variants, 7)
+
+            #     for prompt_func in selected_predicates_choices:
+            #         qa = prompt_func(A, '', '', gt_depth_path, wide_depth_path, detections)
+            #         results.append((qa, A_index, '', '', prompt_func.__name__, 'one_object_qa'))
+
             for A, A_index in one_obj_object_pairs:
-                valid_prompt_variants = one_object_can
-                selected_predicates_choices = random.sample(valid_prompt_variants, 8)
+                valid_prompt_variants = obj2point
+                selected_predicates_choices = random.sample(valid_prompt_variants, 1)
 
                 for prompt_func in selected_predicates_choices:
                     qa = prompt_func(A, '', '', gt_depth_path, wide_depth_path, detections)
@@ -2654,9 +2668,17 @@ class PromptGenerator:
             one_obj_selected_combinations = one_obj_all_combinations[:2]
             one_object_pairs = [(detections[i], i) for (i,) in one_obj_selected_combinations]
 
+            # for A, A_index in one_object_pairs:
+            #     valid_prompt_variants = one_object_can
+            #     selected_predicates_choices = random.sample(valid_prompt_variants, 7)
+
+            #     for prompt_func in selected_predicates_choices:
+            #         qa = prompt_func(A, '', '', gt_depth_path, wide_depth_path, detections)
+            #         results.append((qa, A_index, '', '', prompt_func.__name__, 'one_object_qa'))
+
             for A, A_index in one_object_pairs:
-                valid_prompt_variants = one_object_can
-                selected_predicates_choices = random.sample(valid_prompt_variants, 8)
+                valid_prompt_variants = obj2point
+                selected_predicates_choices = random.sample(valid_prompt_variants, 1)
 
                 for prompt_func in selected_predicates_choices:
                     qa = prompt_func(A, '', '', gt_depth_path, wide_depth_path, detections)
@@ -2668,14 +2690,22 @@ class PromptGenerator:
             two_obj_selected_combinations = two_obj_all_combinations[:2]
             two_object_pairs = [(detections[i], detections[j], i, j) for i, j in two_obj_selected_combinations]
 
+            # for A, B, A_index, B_index in two_object_pairs:
+            #     valid_prompt_variants = two_object_can
+            #     # 遍历每个类别，每类采样 1 个
+            #     selected_predicates_choices = [
+            #         random.choice(func_list)
+            #         for func_list in valid_prompt_variants.values()
+            #         if len(func_list) > 0
+            #     ]
+
+            #     for prompt_func in selected_predicates_choices:
+            #         qa = prompt_func(A, B, '', gt_depth_path, wide_depth_path, detections)
+            #         results.append((qa, A_index, B_index, '', prompt_func.__name__, 'two_object_qa'))
+
             for A, B, A_index, B_index in two_object_pairs:
-                valid_prompt_variants = two_object_can
-                # 遍历每个类别，每类采样 1 个
-                selected_predicates_choices = [
-                    random.choice(func_list)
-                    for func_list in valid_prompt_variants.values()
-                    if len(func_list) > 0
-                ]
+                valid_prompt_variants = anchor_obj_to_point
+                selected_predicates_choices = random.sample(valid_prompt_variants, 4)
 
                 for prompt_func in selected_predicates_choices:
                     qa = prompt_func(A, B, '', gt_depth_path, wide_depth_path, detections)
@@ -2688,77 +2718,105 @@ class PromptGenerator:
         # --------------------------        
         elif len(detections) >= 3:
             # 一元谓词：对每个物体各选一次
+            # one_obj_all_combinations = list(combinations(range(len(detections)), 1))
+            # random.shuffle(one_obj_all_combinations)
+            # one_obj_selected_combinations = one_obj_all_combinations[:8]
+            # one_object_pairs = [(detections[i], i) for (i,) in one_obj_selected_combinations]
+
+            # for A, A_index in one_object_pairs:
+            #     valid_prompt_variants = one_object_can
+            #     selected_predicates_choices = random.sample(valid_prompt_variants, 2)
+
+            #     for prompt_func in selected_predicates_choices:
+            #         qa = prompt_func(A, '', '', gt_depth_path, wide_depth_path, detections)
+            #         results.append((qa, A_index, '', '', prompt_func.__name__, 'one_object_qa'))
+
+            # 物体本身点
             one_obj_all_combinations = list(combinations(range(len(detections)), 1))
             random.shuffle(one_obj_all_combinations)
             one_obj_selected_combinations = one_obj_all_combinations[:8]
             one_object_pairs = [(detections[i], i) for (i,) in one_obj_selected_combinations]
 
             for A, A_index in one_object_pairs:
-                valid_prompt_variants = one_object_can
-                selected_predicates_choices = random.sample(valid_prompt_variants, 2)
+                valid_prompt_variants = obj2point
+                selected_predicates_choices = random.sample(valid_prompt_variants, 1)
 
                 for prompt_func in selected_predicates_choices:
                     qa = prompt_func(A, '', '', gt_depth_path, wide_depth_path, detections)
                     results.append((qa, A_index, '', '', prompt_func.__name__, 'one_object_qa'))
 
             # 二元谓词：从有序组合中选取
+            # two_obj_all_combinations = list(permutations(range(len(detections)), 2))
+            # random.shuffle(two_obj_all_combinations)
+            # two_obj_selected_combinations = two_obj_all_combinations[:7]
+            # two_object_pairs = [(detections[i], detections[j], i, j) for i, j in two_obj_selected_combinations]
+
+            # for A, B, A_index, B_index in two_object_pairs:
+            #     valid_prompt_variants = two_object_can
+            #     # 从所有类别中随机选取 4 类
+            #     all_categories = list(valid_prompt_variants.keys())
+            #     random.shuffle(all_categories)
+            #     selected_categories = all_categories[:4]
+            #     # 每类中随机选一个函数
+            #     for category in selected_categories:
+            #         func_list = valid_prompt_variants[category]
+            #         if not func_list:
+            #             continue  # 如果该类为空，跳过
+            #         prompt_func = random.choice(func_list)
+
+            #         qa = prompt_func(A, B, '', gt_depth_path, wide_depth_path, detections)
+            #         results.append((qa, A_index, B_index, '', prompt_func.__name__, 'two_object_qa'))
+
+            # 锚点出点：从有序组合中选取
             two_obj_all_combinations = list(permutations(range(len(detections)), 2))
             random.shuffle(two_obj_all_combinations)
-            two_obj_selected_combinations = two_obj_all_combinations[:7]
+            two_obj_selected_combinations = two_obj_all_combinations[:8]
             two_object_pairs = [(detections[i], detections[j], i, j) for i, j in two_obj_selected_combinations]
 
             for A, B, A_index, B_index in two_object_pairs:
-                valid_prompt_variants = two_object_can
-                # 从所有类别中随机选取 4 类
-                all_categories = list(valid_prompt_variants.keys())
-                random.shuffle(all_categories)
-                selected_categories = all_categories[:4]
-                # 每类中随机选一个函数
-                for category in selected_categories:
-                    func_list = valid_prompt_variants[category]
-                    if not func_list:
-                        continue  # 如果该类为空，跳过
-                    prompt_func = random.choice(func_list)
+                valid_prompt_variants = anchor_obj_to_point
+                selected_predicates_choices = random.sample(valid_prompt_variants, 1)
 
+                for prompt_func in selected_predicates_choices:
                     qa = prompt_func(A, B, '', gt_depth_path, wide_depth_path, detections)
                     results.append((qa, A_index, B_index, '', prompt_func.__name__, 'two_object_qa'))
 
             # 三元谓词：从有序组合中选取
-            three_obj_all_combinations = list(permutations(range(len(detections)), 3))
-            random.shuffle(three_obj_all_combinations)
-            three_obj_selected_combinations = three_obj_all_combinations[:8]
-            three_object_pairs = [(detections[i], detections[j], detections[k], i, j, k) for i, j ,k in three_obj_selected_combinations]
+            # three_obj_all_combinations = list(permutations(range(len(detections)), 3))
+            # random.shuffle(three_obj_all_combinations)
+            # three_obj_selected_combinations = three_obj_all_combinations[:8]
+            # three_object_pairs = [(detections[i], detections[j], detections[k], i, j, k) for i, j ,k in three_obj_selected_combinations]
 
-            for A, B, C, A_index, B_index, C_index in three_object_pairs:
-                valid_prompt_variants = three_object_can
-                selected_predicates_choices = random.sample(valid_prompt_variants, 1)
+            # for A, B, C, A_index, B_index, C_index in three_object_pairs:
+            #     valid_prompt_variants = three_object_can
+            #     selected_predicates_choices = random.sample(valid_prompt_variants, 1)
 
-                for prompt_func in selected_predicates_choices:
-                    qa = prompt_func(A, B, C, gt_depth_path, wide_depth_path, detections)
-                    results.append((qa, A_index, B_index, C_index, prompt_func.__name__, 'three_object_qa'))
+            #     for prompt_func in selected_predicates_choices:
+            #         qa = prompt_func(A, B, C, gt_depth_path, wide_depth_path, detections)
+            #         results.append((qa, A_index, B_index, C_index, prompt_func.__name__, 'three_object_qa'))
 
             # 无序三元谓词，从无序组合中选取
-            three_obj_all_combinations_for_multi_anchor = list(combinations(range(len(detections)), 3))
-            random.shuffle(three_obj_all_combinations_for_multi_anchor)
-            three_object_pairs_for_multi_anchor = [(detections[i], detections[j], detections[k], i, j, k) for i, j ,k in three_obj_all_combinations_for_multi_anchor]
-            count = 0
-            for A, B, C, A_index, B_index, C_index in three_object_pairs_for_multi_anchor:
-                direction = find_max_variance_direction(A, B, C)
-                sorted_objs = sort_objects_by_direction([A, B, C], direction)
-                e1, middle, e2 = sorted_objs
-                # 获取对应 index
-                obj_to_index = {
-                    id(A): A_index,
-                    id(B): B_index,
-                    id(C): C_index
-                }
-                e1_index     = obj_to_index[id(e1)]
-                middle_index = obj_to_index[id(middle)]
-                e2_index     = obj_to_index[id(e2)]
-                if not check_ambiguity(middle, e1, e2, detections, direction):
-                    qa = find_obj_between_anchor(e1, middle, e2, direction, gt_depth_path, wide_depth_path, detections)
-                    results.append((qa, e1_index, middle_index, e2_index, 'find_obj_between_anchor', 'three_object_qa'))
-                    count += 1
-                    if count >= 4:
-                        break
+            # three_obj_all_combinations_for_multi_anchor = list(combinations(range(len(detections)), 3))
+            # random.shuffle(three_obj_all_combinations_for_multi_anchor)
+            # three_object_pairs_for_multi_anchor = [(detections[i], detections[j], detections[k], i, j, k) for i, j ,k in three_obj_all_combinations_for_multi_anchor]
+            # count = 0
+            # for A, B, C, A_index, B_index, C_index in three_object_pairs_for_multi_anchor:
+            #     direction = find_max_variance_direction(A, B, C)
+            #     sorted_objs = sort_objects_by_direction([A, B, C], direction)
+            #     e1, middle, e2 = sorted_objs
+            #     # 获取对应 index
+            #     obj_to_index = {
+            #         id(A): A_index,
+            #         id(B): B_index,
+            #         id(C): C_index
+            #     }
+            #     e1_index     = obj_to_index[id(e1)]
+            #     middle_index = obj_to_index[id(middle)]
+            #     e2_index     = obj_to_index[id(e2)]
+            #     if not check_ambiguity(middle, e1, e2, detections, direction):
+            #         qa = find_obj_between_anchor(e1, middle, e2, direction, gt_depth_path, wide_depth_path, detections)
+            #         results.append((qa, e1_index, middle_index, e2_index, 'find_obj_between_anchor', 'three_object_qa'))
+            #         count += 1
+            #         if count >= 4:
+            #             break
             return results

@@ -162,7 +162,7 @@ if __name__ == "__main__":
     except RuntimeError:
         pass
     root_dir = "/home_sfs/zhouenshen/dataset/3D/cubifyanything/filter_step_20"
-    template_name = "template_qa.json"
+    template_name = "template_qa_only_point.json"
     # ✅ 第一步：查找所有合法的帧文件夹（包含目标 JSON）
     frame_dirs = find_all_frame_dirs(root_dir)
 

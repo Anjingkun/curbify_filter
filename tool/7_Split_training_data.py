@@ -9,11 +9,13 @@ from tqdm import tqdm
 TEMPLATE_FILE = Path("/home_sfs/zhouenshen/dataset/3D/cubifyanything/ca1m_template_qa.json")
 REASONING_FILE = Path("/home_sfs/zhouenshen/dataset/3D/cubifyanything/ca1m_reasoning_qa.json")
 CHOICE_FILE    = Path("/home_sfs/zhouenshen/dataset/3D/cubifyanything/ca1m_choice_qa.json")
+POINT_FILE     = Path("/home_sfs/zhouenshen/dataset/3D/cubifyanything/ca1m_template_qa_only_point.json")
+
 
 # 定义输出文件路径（文件将保存在当前工作目录）
 OUTPUT_MERGED = Path("/home_sfs/zhouenshen/dataset/3D/cubifyanything/ca1m_reasoning_template_qa_split.json")
 OUTPUT_CHOICE = Path("/home_sfs/zhouenshen/dataset/3D/cubifyanything/ca1m_choice_qa_split.json")
-
+OUTPUT_POINT   = Path("/home_sfs/zhouenshen/dataset/3D/cubifyanything/ca1m_template_qa_only_point_split.json")
 # 每条数据最多允许的QA数量（注意，一个QA对对应2条对话记录）
 MAX_QA = 15  
 CHUNK_SIZE = MAX_QA * 2  # 对应 conversations 的条目数
@@ -89,37 +91,51 @@ def split_dataset(dataset: list) -> list:
     return new_dataset
 
 def main():
-    print("加载 ca1m_template_qa 数据...")
-    template_data = load_json(TEMPLATE_FILE)
-    print("加载 ca1m_reasoning_qa 数据...")
-    reasoning_data = load_json(REASONING_FILE)
-    print("加载 ca1m_choice_qa 数据...")
-    choice_data = load_json(CHOICE_FILE)
+    # print("加载 ca1m_template_qa 数据...")
+    # template_data = load_json(TEMPLATE_FILE)
+    # print("加载 ca1m_reasoning_qa 数据...")
+    # reasoning_data = load_json(REASONING_FILE)
+    # print("加载 ca1m_choice_qa 数据...")
+    # choice_data = load_json(CHOICE_FILE)
     
-    # 任务1：合并 template 与 reasoning 对话数据
-    merged_data = merge_template_reasoning(template_data, reasoning_data)
-    print(f"合并后数据条数：{len(merged_data)}")
+    # # 任务1：合并 template 与 reasoning 对话数据
+    # merged_data = merge_template_reasoning(template_data, reasoning_data)
+    # print(f"合并后数据条数：{len(merged_data)}")
     
-    # 任务2：打乱合并后的顺序
-    random.shuffle(merged_data)
+    # # 任务2：打乱合并后的顺序
+    # random.shuffle(merged_data)
     
-    # 任务3：拆分 QA 对超过10对的数据，分别对 merged_data 和 choice_data 进行拆分
-    print("拆分合并数据中 QA 数超过限制的条目...")
-    merged_split = split_dataset(merged_data)
-    print(f"拆分后合并数据条数：{len(merged_split)}")
+    # # 任务3：拆分 QA 对超过10对的数据，分别对 merged_data 和 choice_data 进行拆分
+    # print("拆分合并数据中 QA 数超过限制的条目...")
+    # merged_split = split_dataset(merged_data)
+    # print(f"拆分后合并数据条数：{len(merged_split)}")
     
-    print("拆分 ca1m_choice_qa 数据中 QA 数超过限制的条目...")
-    choice_split = split_dataset(choice_data)
-    print(f"拆分后 ca1m_choice_qa 数据条数：{len(choice_split)}")
+    # print("拆分 ca1m_choice_qa 数据中 QA 数超过限制的条目...")
+    # choice_split = split_dataset(choice_data)
+    # print(f"拆分后 ca1m_choice_qa 数据条数：{len(choice_split)}")
     
-    # 保存结果
-    with open(OUTPUT_MERGED, "w", encoding="utf8") as f:
-        json.dump(merged_split, f, indent=2, ensure_ascii=False)
-    print(f"合并并拆分后的模板+推理数据已保存至 {OUTPUT_MERGED}")
+    # # 保存结果
+    # with open(OUTPUT_MERGED, "w", encoding="utf8") as f:
+    #     json.dump(merged_split, f, indent=2, ensure_ascii=False)
+    # print(f"合并并拆分后的模板+推理数据已保存至 {OUTPUT_MERGED}")
 
-    with open(OUTPUT_CHOICE, "w", encoding="utf8") as f:
-        json.dump(choice_split, f, indent=2, ensure_ascii=False)
-    print(f"拆分后的 choice 数据已保存至 {OUTPUT_CHOICE}")
+    # with open(OUTPUT_CHOICE, "w", encoding="utf8") as f:
+    #     json.dump(choice_split, f, indent=2, ensure_ascii=False)
+    # print(f"拆分后的 choice 数据已保存至 {OUTPUT_CHOICE}")
+
+    point_data = load_json(POINT_FILE)
+    print(f"加载 template_qa_more_point 数据...")
+    print(f"template_qa_more_point 数据条数：{len(point_data)}")
+
+    # 拆分 template_qa_more_point 数据中 QA 数超过限制的条目
+    print("拆分 template_qa_more_point 数据中 QA 数超过限制的条目...")
+    point_split = split_dataset(point_data)
+    print(f"拆分后 template_qa_more_point 数据条数：{len(point_split)}")
+
+    # 保存结果
+    with open(OUTPUT_POINT, "w", encoding="utf8") as f:
+        json.dump(point_split, f, indent=2, ensure_ascii=False)
+    print(f"拆分后的 template_qa_more_point 数据已保存至 {OUTPUT_POINT}")
 
 if __name__ == "__main__":
     main()

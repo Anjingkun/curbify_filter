@@ -44,7 +44,7 @@ def process_frame(frame_dir: str) -> dict:
             return None
         
         video_id, frame_id = relative_parts[0], relative_parts[1]
-        qa_json_path = frame_path / "template_qa.json"
+        qa_json_path = frame_path / "template_qa_only_point.json"
         
         if not qa_json_path.exists():
             print(f"❌ 未找到 {qa_json_path}，跳过该目录")
@@ -98,7 +98,7 @@ if __name__ == "__main__":
                 results.append(result)
     
     # 将所有处理结果写入大 JSON 文件 (ca1m_template_qa.json)
-    output_path = Path(ROOT_DIR).parent / "ca1m_template_qa.json"
+    output_path = Path(ROOT_DIR).parent / "ca1m_template_qa_only_point.json"
     with open(output_path, "w", encoding="utf8") as f:
         json.dump(results, f, indent=2, ensure_ascii=False)
     
